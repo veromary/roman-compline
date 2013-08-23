@@ -1,6 +1,6 @@
-This is LuaTeX, Version beta-0.70.2-2012070301 (TeX Live 2012/Debian) (format=lualatex 2013.1.30)  9 MAY 2013 19:06
+This is LuaTeX, Version beta-0.70.2-2012070301 (TeX Live 2012/Debian) (format=lualatex 2013.1.30)  23 AUG 2013 21:31
  restricted \write18 enabled.
-**main-lualatex.tex
+**main-lualatex
 (./main-lualatex.tex
 LaTeX2e <2011/06/27>
 LuaTeX adaptation of babel <v3.8m-luatex-1.5> and hyphenation patterns for engl
@@ -657,7 +657,7 @@ Package ifvtex Info: VTeX not detected.
 \Gm@layoutvoffset=\dimen303
 \Gm@dimlist=\toks21
 )
-(/usr/share/texmf/tex/latex/gregoriotex/gregoriotex.sty
+(/usr/share/texmf/tex/luatex/gregoriotex/gregoriotex.sty
 Package: gregoriotex 2010/09/27 v2.1 GregorioTeX system.
 
 (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
@@ -678,15 +678,15 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/usr/share/texmf/tex/gregoriotex/gregoriotex.tex
+(/usr/share/texmf/tex/luatex/gregoriotex/gregoriotex.tex
 \gregorioattr=\luatexattribute9
 
-(/usr/share/texmf/tex/gregoriotex/gregoriotex.lua)
-Lua module: gregoriotex 2010/09/27 2.1 GregorioTeX module.
+(/usr/share/texmf/tex/luatex/gregoriotex/gregoriotex.lua)
+Lua module: gregoriotex 2013/05/21 2.3 GregorioTeX module.
 \Greaux=\write3
 \grefactor=\count363
 
-(/usr/share/texmf/tex/gregoriotex/gregoriotex-spaces.tex
+(/usr/share/texmf/tex/luatex/gregoriotex/gregoriotex-spaces.tex
 \greadditionallineswidth=\skip262
 \grezerowidthspace=\skip263
 \greinterglyphspace=\skip264
@@ -749,7 +749,7 @@ Lua module: gregoriotex 2010/09/27 2.1 GregorioTeX module.
 \grebraceshift=\skip304
 \grecurlybraceaccentusshift=\skip305
 
-(/usr/share/texmf/tex/gregoriotex/gsp-default.tex))
+(/usr/share/texmf/tex/luatex/gregoriotex/gsp-default.tex))
 \grestafflinewidth=\dimen321
 \grelinewidth=\dimen322
 \grecurrenttranslationheight=\dimen323
@@ -759,41 +759,40 @@ Lua module: gregoriotex 2010/09/27 2.1 GregorioTeX module.
 \GreTempwidth=\box265
 \gretempwidth=\dimen327
 \gretextaligncenter=\dimen328
-\gregoriotextdashwidth=\dimen329
-\greadditionalleftspace=\dimen330
+\greadditionalleftspace=\dimen329
 \GreInitial=\box266
-\greinitialwidth=\dimen331
+\greinitialwidth=\dimen330
 \grebiginitial=\count364
 \greknownline=\count365
 \GreAboveinitialfirstbox=\box267
-\greaboveinitialfirstraise=\dimen332
+\greaboveinitialfirstraise=\dimen331
 \GreAboveinitialsecondbox=\box268
-\greaboveinitialsecondraise=\dimen333
-\grecurrentabovelinestextheight=\dimen334
+\greaboveinitialsecondraise=\dimen332
+\grecurrentabovelinestextheight=\dimen333
 \GreLines=\box269
 
-(/usr/share/texmf/tex/gregoriotex/gregoriotex-signs.tex
+(/usr/share/texmf/tex/luatex/gregoriotex/gregoriotex-signs.tex
 \greclefnum=\count366
-\greclefwidth=\dimen335
+\greclefwidth=\dimen334
 \GreTempsign=\box270
-\gretempdimsignwidth=\dimen336
-\gretempdimtwo=\dimen337
+\gretempdimsignwidth=\dimen335
+\gretempdimtwo=\dimen336
 \keeprightbox=\count367
 \grefirstisalteration=\count368
 )
-(/usr/share/texmf/tex/gregoriotex/gregoriotex-syllable.tex
-\greglyphraisevalue=\dimen338
-\greaddedraisevalue=\dimen339
+(/usr/share/texmf/tex/luatex/gregoriotex/gregoriotex-syllable.tex
+\greglyphraisevalue=\dimen337
+\greaddedraisevalue=\dimen338
 \gretempdimcount=\count369
 \greisonaline=\count370
 \grefirstglyph=\count371
-\grelastglyphwidth=\dimen340
-\grenotesaligncenter=\dimen341
+\grelastglyphwidth=\dimen339
+\grenotesaligncenter=\dimen340
 \GreSyllablenotes=\box271
-\greenddifference=\dimen342
-\grepreviousenddifference=\dimen343
-\grebegindifference=\dimen344
-\gretempdim=\dimen345
+\greenddifference=\dimen341
+\grepreviousenddifference=\dimen342
+\grebegindifference=\dimen343
+\gretempdim=\dimen344
 \GreSyllabletext=\box272
 \grefirstsyllableofword=\count372
 \greendofscore=\count373
@@ -805,9 +804,14 @@ Lua module: gregoriotex 2010/09/27 2.1 GregorioTeX module.
 \grelastoflinecount=\count375
 \greblockcusto=\count376
 
-(/usr/share/texmf/tex/gregoriotex/gregoriotex-symbols.tex
+(/usr/share/texmf/tex/luatex/gregoriotex/gregoriotex-symbols.tex
 \gretempfactor=\count377
-)))
+
+luaotfload | Font names database loaded: /home/veronica/.texmf-var/luatex-cache
+/generic/names/otfl-names.lua
+luaotfload | load font: font family='gresym', subfamily='regular' found: gresym
+.ttf(load: /home/veronica/.texmf-var/luatex-cache/generic/fonts/otf/temp-gresym
+.lua))))
 (/home/veronica/texmf/tex/latex/preprint/fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip309
@@ -821,7 +825,7 @@ File: latin.ldf 2008/07/06 v2.0l Latin support from the babel system
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count378
-\U@D=\dimen346
+\U@D=\dimen345
 )
 Package babel Info: Making " an active character on input line 188.
 ))
@@ -878,8 +882,7 @@ Now handling font encoding T3 ...
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
-)
-No file main-lualatex.aux.
+) (./main-lualatex.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
@@ -896,7 +899,7 @@ LaTeX Font Info:    Checking defaults for EU2/lmr/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 29.
 LaTeX Font Info:    Try loading font information for T3+cmr on input line 29.
-(/usr/share/texmf/tex/latex/tipa/t3cmr.fd
+ (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
 LaTeX Font Info:    ... okay on input line 29.
@@ -908,13 +911,13 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count379
-\scratchdimen=\dimen347
+\scratchdimen=\dimen346
 \scratchbox=\box273
 \nofMPsegments=\count380
 \nofMParguments=\count381
 \everyMPshowfont=\toks24
 \MPscratchCnt=\count382
-\MPscratchDim=\dimen348
+\MPscratchDim=\dimen347
 \MPnumerator=\count383
 \makeMPintoPDFobject=\count384
 \everyMPtoPDFconversion=\toks25
@@ -1043,43 +1046,78 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 checksum mismatch in font ptmrc8t.vf ignored 
-checksum mismatch in font greciliae.ofm.vf ignored 
+luaotfload | load font: font family='greciliae', subfamily='regular' found: gre
+ciliae.ttf(load: /home/veronica/.texmf-var/luatex-cache/generic/fonts/otf/temp-
+greciliae.lua)
 checksum mismatch in font ptmrc8t.vf ignored 
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <10> not available
 (Font)              Font shape `T1/ptm/b/sc' tried instead on input line 48.
 
-checksum mismatch in font ptmbc8t.vf ignored 
-checksum mismatch in font ptmri8t.vf ignored  (./telucisAscension.tex
+checksum mismatch in font ptmbc8t.vf ignored  (./Hymn/telucisRegular.tex
 Module luatexbase-mcb info: inserting 'gregoriotex.callback'
 (luatexbase-mcb)            at position 1 in 'post_linebreak_filter'
+Module luatexbase-mcb info: inserting 'gregoriotex.disable_hyphenation'
+(luatexbase-mcb)            at position 1 in 'hyphenate'
+checksum mismatch in font ptmrc8t.vf ignored 
+LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 5.
+
+checksum mismatch in font ptmbc8t.vf ignored 
 Module luatexbase-mcb info: removing 'gregoriotex.callback'
 (luatexbase-mcb)            from 'post_linebreak_filter'
-) [1
+Module luatexbase-mcb info: removing 'gregoriotex.disable_hyphenation'
+(luatexbase-mcb)            from 'hyphenate'
+) (./Hymn/telucisAdvent.tex
+Module luatexbase-mcb info: inserting 'gregoriotex.callback'
+(luatexbase-mcb)            at position 1 in 'post_linebreak_filter'
+Module luatexbase-mcb info: inserting 'gregoriotex.disable_hyphenation'
+(luatexbase-mcb)            at position 1 in 'hyphenate'
+Module luatexbase-mcb info: removing 'gregoriotex.callback'
+(luatexbase-mcb)            from 'post_linebreak_filter'
+Module luatexbase-mcb info: removing 'gregoriotex.disable_hyphenation'
+(luatexbase-mcb)            from 'hyphenate'
+) (./Hymn/telucisChristmas.tex
+Module luatexbase-mcb info: inserting 'gregoriotex.callback'
+(luatexbase-mcb)            at position 1 in 'post_linebreak_filter'
+Module luatexbase-mcb info: inserting 'gregoriotex.disable_hyphenation'
+(luatexbase-mcb)            at position 1 in 'hyphenate'
+[1
 
 {/home/veronica/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./main-lualatex.aux) )
+Module luatexbase-mcb info: removing 'gregoriotex.callback'
+(luatexbase-mcb)            from 'post_linebreak_filter'
+Module luatexbase-mcb info: removing 'gregoriotex.disable_hyphenation'
+(luatexbase-mcb)            from 'hyphenate'
+) (./Hymn/telucisAscension.tex
+Module luatexbase-mcb info: inserting 'gregoriotex.callback'
+(luatexbase-mcb)            at position 1 in 'post_linebreak_filter'
+Module luatexbase-mcb info: inserting 'gregoriotex.disable_hyphenation'
+(luatexbase-mcb)            at position 1 in 'hyphenate'
+Module luatexbase-mcb info: removing 'gregoriotex.callback'
+(luatexbase-mcb)            from 'post_linebreak_filter'
+Module luatexbase-mcb info: removing 'gregoriotex.disable_hyphenation'
+(luatexbase-mcb)            from 'hyphenate'
+) [2] (./main-lualatex.aux) )
 
 Here is how much of LuaTeX's memory you used:
- 16932 strings out of 495077
- 100000,383344 words of node,token memory allocated
- 41609 words of node memory still in use:
-   1344 hlist, 225 vlist, 899 rule, 2234 glue, 897 kern, 14 penalty, 446 glyph,
- 946 attribute, 89 glue_spec, 477 attribute_list, 1 write, 448 pdf_colorstack n
-odes
-   avail lists: 1:1,2:1607,3:536,4:254,5:603,6:603,7:79,9:313,10:17
- 19735 multiletter control sequences out of 65536+200000
- 49 fonts using 2862495 bytes
- 55i,5n,37p,637b,138s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fo
-nts/type1/public/gregoriotex/greciliae/greciliae-0.pfb></usr/share/texmf/fonts/
-type1/public/gregoriotex/greciliae/greciliae-1.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on main-lualatex.pdf (1 page, 68538 bytes).
+ 16944 strings out of 495077
+ 195331,383344 words of node,token memory allocated
+ 153734 words of node memory still in use:
+   5009 hlist, 840 vlist, 3359 rule, 8369 glue, 3354 kern, 2 penalty, 1664 glyp
+h, 3388 attribute, 98 glue_spec, 1698 attribute_list, 1 write, 1678 pdf_colorst
+ack nodes
+   avail lists: 2:3649,3:1470,4:360,5:1147,6:1278,7:104,9:607,10:23
+ 19728 multiletter control sequences out of 65536+200000
+ 43 fonts using 2256903 bytes
+ 55i,5n,37p,633b,138s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf/fonts/truetype/public/gregoriotex/gresym.ttf></usr/share/texm
+f/fonts/truetype/public/gregoriotex/greciliae.ttf>{/usr/share/texlive/texmf-dis
+t/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on main-lualatex.pdf (2 pages, 35631 bytes).
 
-PDF statistics: 29 PDF objects out of 1000 (max. 8388607)
- 20 compressed objects within 1 object stream
+PDF statistics: 34 PDF objects out of 1000 (max. 8388607)
+ 21 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
