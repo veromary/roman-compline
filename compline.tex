@@ -1,0 +1,520 @@
+\documentclass[ebook,12pt,twoside,openany]{memoir}
+\usepackage[british,latin]{babel}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+%\setmainfont[Numbers=OldStyle]{Linux Libertine O}
+\setmainfont{EB Garamond}
+\setsansfont{Linux Biolinum O}
+\newfontfamily{\anavio}{EB Garamond}
+%\newfontfamily{\vectis}{Vectis}
+\newfontface{\vectis}{Vectis Bold}
+\newfontfamily{\libertine}{Linux Libertine O}
+\newfontface{\versicles}{Versiculum}
+\usepackage{parallel}
+\usepackage{lettrine}
+\newfontface{\cruci}{Juuji}
+\usepackage{gregoriotex}
+%\settrimmedsize{9in}{6in}{*}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{0pt}
+%\addtolength{\trimedge}{-\paperwidth}
+\settypeblocksize{180mm}{116mm}{*} % Was 101mm in a5
+\setulmargins{*}{*}{1.4}
+\setlrmargins{*}{*}{1.6}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{.8\onelineskip}{*}
+\checkandfixthelayout
+
+
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\parindent}{0pt}
+\setlength{\stanzaskip}{6pt plus 2pt minus 1pt}
+
+\newlength{\gcolwidth}
+\setlength{\gcolwidth}{0.48\textwidth}
+
+\def\latin#1{%
+\selectlanguage{latin}
+\ParallelLText{#1\strut}%
+\selectlanguage{british}%
+\relax %
+}
+
+\def\vern#1{%
+\ParallelRText{#1\strut}%
+%\ParallelLText{\ \vspace*{1mm}}\ParallelRText{\ \vspace*{1mm}}%
+\ParallelPar %
+%\kern -1mm%
+\relax %
+}
+
+
+\def\firstlatin#1#2#3{%
+\latin{%
+\noindent\begin{minipage}[t]{\ParallelLWidth}%
+\lettrine{#1}{#2}#3\strut%\vspace{0.9mm}\vspace{0.13cm}%
+\end{minipage}%
+}%
+%\vspace{-0.2cm}%
+}
+
+\def\firstvern#1#2#3{%
+\vern{%
+\noindent\begin{minipage}[t]{\ParallelRWidth}%
+\lettrine{#1}{#2}#3\strut%\vspace{0.9mm}\vspace{0.13cm}%
+\end{minipage}%
+}%\vspace{-0.2cm}%
+}
+
+\newcommand\maltese{{\tiny \cruci V}\ }
+
+\renewcommand\Vbar{\makebox[1em][l]{\versicles v}}
+\renewcommand\Rbar{\makebox[1em][l]{\versicles r}}
+
+\newcommand\rubrics[1]{\textit{#1}}
+
+
+\title{Ad Completorium}
+
+\chapterstyle{dash}
+
+\begin{document}
+
+\let\oldtextbf\textbf
+
+\renewcommand\textbf[1]{%
+    \pdfliteral direct {2 Tr 0.2 w}%
+     \oldtextbf{#1}%
+    \pdfliteral direct {0 Tr 0 w}%
+}
+\newcommand\embolden[1]{%
+    \pdfliteral direct {2 Tr 0.2 w}%
+     #1%
+    \pdfliteral direct {0 Tr 0 w}%
+}
+\renewcommand\greboldfont[1]{%
+    \pdfliteral direct {2 Tr 0.2 w}%
+    \oldtextbf{#1}%
+    \pdfliteral direct {0 Tr 0 w}%
+}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{The beginning}
+
+\includescore{common/jubedomne}
+
+\includescore{common/noctem}
+
+\includescore{common/complineread}
+
+\includescore{common/adjutorium}
+
+\includescore{common/quifecit}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\firstlatin{C}{onfiteor}{ Deo omnipoténti, %\parfillskip0pt 
+beát\ae\ Marí\ae\ semper Vírgini, beáto
+Michaéli Archángelo, beáto Joánni Baptíst\ae, sanctis Apóstolis Petro
+et Paulo, ómnibus Sanctis, [\textit{(if a priest presides)} et tibi, Pater:] quia peccávi nimis cogitatióne,
+verbo et ópere: \textit{(strike breast three times)} \textbf{mea
+culpa, mea culpa, mea máxima culpa.} Ideo precor beátam Maríam semper
+Vírginem, beátum Michaélem Archángelum, beátum Joánnem Baptístam,
+sanctos Apóstolos Petrum et Paulum, omnes Sanctos, [\textit{(if a priest presides)} et te, Pater,] oráre
+pro me ad Dóminum Deum nostrum.}
+\firstvern{I}{ confess}{ to Almighty God, to blessed Mary %\parfillskip0pt 
+ever Virgin, to blessed Michael the Arch\-angel, to blessed John the
+Baptist, to the holy Apostles Peter and Paul, to all the Saints, [and
+to you, Father,] that I have sinned exceedingly, in thought, word,
+and deed: \textit{(strike breast three times)} through my fault,
+through my fault, through my most grievous fault. Therefore I beseech
+blessed Mary ever Virgin, blessed Michael the Arch\-angel, blessed John
+the Baptist, the holy Apostles Peter and Paul, all the Saints, [and
+you, Father,] to pray for me to the Lord our God.}
+%\latin{}
+%\vern{}
+\end{Parallel}
+\smallskip
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\latin{Misereátur nostri omnípotens Deus, et dimíssis peccátis
+nostris, perdúcat nos ad vitam \ae térnam.}
+\vern{May Almighty God have mercy upon you, forgive you your sins, and
+bring you to life everlasting.}
+
+\latin{Amen.}
+\vern{Amen.}
+
+
+\latin{Indulgéntiam, \maltese absolutiónem, et remissiónem peccatórum
+nostrórum, tríbuat nobis omnípotens et miséricors Dóminus.}
+\vern{May the Almighty and merciful Lord grant us pardon, \maltese absolution,
+and remission of our sins.}
+
+\latin{Amen.}
+\vern{Amen.}
+
+\end{Parallel}
+
+\includescore{common/converte}
+
+\includescore{common/deusinadjutorium_ferial}
+
+\chapter{The Psalter}
+
+\section{Sunday and Feasts}
+
+\includescore{Psalms/sundayantiphon}
+
+\includescore{Psalms/alleluiapaschaltime}
+
+\section{Monday}
+
+\includescore{Psalms/mondayantiphon}
+
+\section{Tuesday}
+
+\includescore{Psalms/tuesdayantiphoninit}
+
+\includescore{Psalms/tuesdaypsalmincipit1}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/tuesdaypsalms1
+\end{Parallel}
+
+\includescore{Psalms/tuesdaypsalmincipit2}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/tuesdaypsalms2
+\end{Parallel}
+
+
+\includescore{Psalms/tuesdaypsalmincipit3}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/tuesdaypsalms3
+\end{Parallel}
+
+\includescore{Psalms/tuesdayantiphon}
+
+\section{Wednesday}
+
+\includescore{Psalms/wednesdayantiphon}
+
+\section{Thursday}
+
+\includescore{Psalms/thursdayantiphon}
+
+\section{Friday}
+
+\includescore{Psalms/fridayantiphon}
+
+\section{Saturday}
+
+\includescore{Psalms/saturdayantiphon}
+
+
+
+
+\chapter{The Hymn}
+
+\section{Sundays and minor feasts:}
+
+\includescore{Hymn/telucisRegular}
+
+\section{Feasts:}
+
+\includescore{Hymn/telucisFeasts}
+
+\section{Ferias:}
+
+\includescore{Hymn/telucisFeria}
+
+Procul recédant sómnia,\\
+Et nóctium phantásmata:\\
+Hostémque nostrum cómprime,\\
+Ne polluántur córpora.
+
+Praésta, Pater piíssime,\\
+Patríque compar Unice,\\
+Cum Spíritu Paráclito,\\
+Regnans per omne saéculum.  Amen.
+
+\section{Advent:}
+
+\includescore{Hymn/telucisAdvent}
+
+\section{Christmas:}
+
+\includescore{Hymn/telucisChristmas}
+
+\section{Holy Family:}
+
+\includescore{Hymn/telucisHolyFamily}
+
+\section{Epiphany:}
+
+\includescore{Hymn/telucisEpiphany}
+
+\section{Septuagesima:}
+
+\includescore{Hymn/telucisLent}
+
+\section{Passiontide:}
+
+\includescore{Hymn/telucisPassiontide}
+
+\section{Easter:}
+
+\includescore{Hymn/telucisEaster}
+
+\section{Ascension:}
+
+\includescore{Hymn/telucisAscension}
+
+\section{Pentecost:}
+
+\includescore{Hymn/telucisPentecost}
+
+\section{Corpus Christi:}
+
+\includescore{Hymn/telucisCorpusChristi}
+
+\section{SacredHeart:}
+
+\includescore{Hymn/telucisSacredHeart}
+
+\section{Christ the King:}
+
+\includescore{Hymn/telucisChristusRex}
+
+\chapter{Chapter and Responsory}
+
+\includescore{common/tuautem}
+
+\section{Short Responsory during the year.}
+
+\includescore{common/inmanus_duringyear}
+
+\includescore{common/custodi}
+
+\section{Short Responsory during Advent.}
+
+\includescore{common/inmanus_advent}
+
+\includescore{common/custodi_advent}
+
+
+\section{Short Responsory during Easter.}
+
+\chapter{The Canticle}
+
+\includescore{common/salvanosinit}
+
+\includescore{common/nuncdimittis}
+
+\includescore{common/salvanos}
+
+\chapter{The Collect}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\latin{Dómine, exaudi oratiónem meam.}
+\vern{O Lord, hear my prayer.}
+\latin{Et clamor meum ad te véniat.}
+\vern{And let my cry come unto Thee.}
+\latin{Orémus.}
+\vern{Let us pray.}
+\latin{Visita, quaesumus...}
+\vern{Visit...}
+\end{Parallel}
+
+\chapter{The Marian Antiphon}
+
+\section{Advent and Christmas}
+
+\includescore{MarianAntiphons/almaredemptoris_solemn}
+
+\includescore{MarianAntiphons/almaredemptoris}
+
+\begin{verse}
+Loving Mother of our Saviour, hear thou thy people’s cry\\
+Star of the deep and Portal of the sky!\\
+Mother of Him who thee made from nothing made.\\
+Sinking we strive and call to thee for aid:\\
+Oh, by what joy which Gabriel brought to thee,\\
+Thou Virgin first and last, let us thy mercy see.
+\end{verse}
+
+\rubrics{In Advent :}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\latin{\Vbar. Angelus D\'omini nunti\'avit Mar\'\i \ae .}
+\vern{The angel of the Lord declared unto Mary.}
+\latin{\Rbar. Et conc\'epit de Sp\'\i ritu Sancto.}
+\vern{And she conceived by the Holy Spirit.}
+\latin{Or\'emus.}
+\vern{Let us pray.}
+\latin{Gr\'atiam tuam, qu\'\ae sumus D\'omine, m\'entibus nostris inf\'unde : \dag \ ut qui, Angelo nunti\'ante, Christi F\'\i lii tui Incarnati\'onem cogn\'ovimus, * per passi\'onem ejus et crucem ad resurrecti\'onis gl\'oriam perduc\'amur.  Per \'eumdem Christum D\'ominum nostrum. \Rbar. Amen.}
+\vern{Pour forth, we beseech thee, O Lord, thy grace into our hearts, that we to whom the incarnation of Christ thy Son was made known by the message of an angel, may by his Passion and Cross be brought to the glory of his resurrection.  Through the same Christ our Lord.  Amen.}
+\end{Parallel}
+
+\bigskip
+
+\rubrics{From the first Vespers of Christmas onwards :}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\latin{\Vbar. Post partum Virgo inviol\'ata permans\'\i sti.}
+\vern{After childbirth, O Virgin, thou didst remain inviolate.}
+\latin{\Rbar. Dei G\'enitrix, interc\'ede pro nobis.}
+\vern{O Mother of God, plead for us.}
+\latin{Or\'emus.}
+\vern{Let us pray.}
+\latin{Deus, qui salutis \ae t\'ern\ae , be\'atae \ Mar\'\i \ae \ virginit\'ate fec\'unda, hum\'ano g\'eneri pr\'\ae mia pr\ae stit\'\i sti : \dag \ tr\'\i bue, qu\'\ae sumus; ut ipsam pro nobis interc\'edere senti\'amus, * per quam mer\'uimus auct\'orem vit\ae \ susc\'\i pere, D\'ominum nostrum Jesum Christum F\'\i lium tuum. \Rbar. Amen}
+\vern{O God, Who by the fruitful virginity of blessed Mary, hast given to mankind the rewards of eternal salvation: grant, we beseech You, that we may experience her intercession for us, by whom we deserved to receive the Author of life, our Lord Jesus Christ, Your Son. Amen.}
+\end{Parallel}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\latin{\Vbar.\ Divínum auxílium máneat semper nobíscum.}
+\vern{May the divine assistance remain always with us.}
+\latin{\Rbar.\ Amen.}
+\vern{Amen.}
+\end{Parallel}
+
+\
+\section{Septuagesima and Lent}
+
+\includescore{MarianAntiphons/averegina_solemn}
+
+\includescore{MarianAntiphons/averegina}
+
+\begin{verse}
+Hail, Queen of heaven;\\
+Hail, Mistress of the Angels;\\
+Hail, root of Jesse;\\
+Hail, the gate through which the Light rose over the earth.\\
+Rejoice, Virgin most renowned and of unsurpassed beauty.
+
+Farewell, O most beautiful one,
+and pray for us to Christ.
+\end{verse}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\latin{\Vbar. Dign\'are me laud\'are te, Virgo sacr\'ata.}
+\vern{Vouchsafe that I may praise thee, O sacred Virgin.}
+\latin{\Rbar. Da mihi virt\'utem contra hostes tuos.}
+\vern{Give me strength against thine enemies.}
+\latin{Or\'emus}{Let us pray.}
+\latin{Conc\'ede, mis\'ericors Deus, fragilit\'ati nostr\ae \ pr\ae \-s\'\i \-dium : \dag \ 
+ut qui sanct\ae \ Dei Genitr\'\i cis mem\'oriam \'agimus, * 
+intercessi\'onis ejus aux\'\i lio, a nostris iniqui\-t\'a\-tibus resurg\'amus.
+Per e\'umdem Christum D\'ominum nostrum.
+\Rbar. Amen.}
+\vern{We beseech thee, O Lord, mercifully to assist our infirmity: that like as we do now commemorate Blessed Mary Ever-Virgin, Mother of God; so by the help of her intercession we may die to our former sins and rise again to newness of life. Through the same Christ our Lord. Amen.}
+\end{Parallel}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\latin{\Vbar.\ Divínum auxílium máneat semper nobíscum.}
+\vern{May the divine assistance remain always with us.}
+\latin{\Rbar.\ Amen.}
+\vern{Amen.}
+\end{Parallel}
+
+
+\section{Paschaltide}
+
+\includescore{MarianAntiphons/reginacaeli_solemn}
+
+\includescore{MarianAntiphons/reginacaeli}
+
+\begin{verse}
+Queen of heaven, rejoice, alleluia.\\
+For He whom thou didst merit to bear, alleluia,\\
+has risen as he said, alleluia.\\
+Pray to God for us, alleluia.\\
+Rejoice and be glad, O Virgin Mary, alleluia.\\
+For the Lord has truly risen, alleluia.
+\end{verse}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\latin{\Vbar.\ Gaude et l\ae t\'are Virgo Mar\'\i a, allel\'uia.}
+\vern{Rejoice and be glad O Virgin Mary, alleluia.}
+\latin{\Rbar.\ Quia surr\'exit D\'ominus vere, allel\'uia.}
+\vern{For the Lord has risen indeed, alleluia.}
+\latin{Or\'emus.}
+\vern{Let us pray.}
+\latin{Deus, qui per resurrecti\'onem F\'\i lii tui D\'omini
+ nostri Jesu Christi mundum l\ae tific\'are dignatus es : \dag \ 
+pr\ae sta, qu\ae sumus; ut per ejus Genitr\'\i cem 
+V\'\i rginem Mar\'\i am, * perp\'etu\ae \ cap\'\i amus
+ g\'audia vit\ae . Per e\'umdem Christum D\'ominum nostrum. \Rbar.~Amen.}
+\vern{O God, who through the resurrection of Thy Son our Lord Jesus Christ
+didst vouchsafe to give joy to the world:
+grant, we beseech thee, that through His Mother, the Virgin Mary,
+we may obtain the joys of everlasting life.
+Through Christ our Lord. Amen.}
+\end{Parallel}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\latin{\Vbar.\ Divínum auxílium máneat semper nobíscum.}
+\vern{May the divine assistance remain always with us.}
+\latin{\Rbar.\ Amen.}
+\vern{Amen.}
+\end{Parallel}
+
+
+\section{During the year}
+
+\includescore{MarianAntiphons/salveregina_solemn}
+
+\includescore{MarianAntiphons/salveregina}
+
+\begin{verse}
+Hail, holy Queen, Mother of mercy,\\
+hail, our life, our sweetness, and our hope.\\
+To thee do we cry, the children of Eve;\\
+to thee do we send up our sighs,\\
+mourning and weeping in this valley of tears.\\
+Turn, then, most gracious advocate,\\
+thine eyes of mercy toward us;\\
+and after this our exile, show unto us\\
+the blessed fruit of thy womb, Jesus:\\
+O clement, O loving, O sweet Virgin Mary.
+\end{verse}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\latin{\Vbar.\ Ora pro nobis sancta Dei Génitrix.}
+\vern{Pray for us, O holy Mother of God.}
+\latin{\Rbar.\ Ut digni efficiámur promissiónibus Christi.}
+\vern{That we may be made worthy of the promises of Christ.}
+\latin{Or\'emus.}
+\vern{Let us pray.}
+\latin{Omn\'\i potens sempit\'erne Deus, qui glori\'osae V\'\i rginis Matris Mar\'\i {\ae}
+corpus et \'animam, ut dignum F\'\i lii tui habit\'aculum \'effici merer\'etur,
+Sp\'\i ritu Sancto cooper\'ante pr{\ae}par\'asti : \dag \  da, ut cujus 
+commemorati\'one l{\ae}t\'amur, * ejus pia intercessi\'one ab
+inst\'antibus malis et a mortis perp\'etua liber\'emur.
+Per e\'umdem Christum D\'ominum nostrum. \Rbar. Amen.}
+\vern{Almighty, everlasting God, who by the co-operation of the Holy Spirit didst prepare the body and soul of the glorious Virgin-Mother Mary to become a dwelling-place meet for thy Son: grant that as we rejoice in her commemoration; so by her fervent intercession we may be delivered from present evils and from everlasting death. Through the same Christ our Lord. Amen.}
+\end{Parallel}
+
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\latin{\Vbar.\ Divínum auxílium máneat semper nobíscum.}
+\vern{May the divine assistance remain always with us.}
+\latin{\Rbar.\ Amen.}
+\vern{Amen.}
+\end{Parallel}
+
+
+\appendix
+
+\chapter{Sacred Triduum}
+
+\chapter{Easter Octave}
+
+\chapter{All Souls' Day}
+
+Tones - could be incorporated in the body.
+
+\end{document}
