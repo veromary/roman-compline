@@ -1,4 +1,4 @@
-\documentclass[ebook,12pt,twoside,openany]{memoir}
+\documentclass[a5paper,12pt,twoside,openany]{memoir}
 \usepackage[british,latin]{babel}
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
@@ -18,7 +18,7 @@
 \setlength{\trimtop}{0pt}
 \setlength{\trimedge}{0pt}
 %\addtolength{\trimedge}{-\paperwidth}
-\settypeblocksize{180mm}{116mm}{*} % Was 101mm in a5
+\settypeblocksize{170mm}{116mm}{*} % Was 101mm in a5
 \setulmargins{*}{*}{1.4}
 \setlrmargins{*}{*}{1.6}
 \setheadfoot{\onelineskip}{2\onelineskip}
@@ -71,16 +71,17 @@
 \renewcommand\Vbar{\makebox[1em][l]{\versicles v}}
 \renewcommand\Rbar{\makebox[1em][l]{\versicles r}}
 
-\newcommand\rubrics[1]{\textit{#1}}
+\let\oldtextbf\textbf
 
+\newcommand\rubrics[1]{\textit{#1}}
+\newcommand\bibleref[2]{\oldtextbf{#1} \hfill \textit{#2}}
+\newcommand\psalm[1]{~ \hfill \oldtextbf{Psalm #1.} \hfill ~}
 
 \title{Ad Completorium}
 
 \chapterstyle{dash}
 
 \begin{document}
-
-\let\oldtextbf\textbf
 
 \renewcommand\textbf[1]{%
     \pdfliteral direct {2 Tr 0.2 w}%
@@ -104,9 +105,19 @@
 
 \chapter{The beginning}
 
+\rubrics{The lector stands in the middle, before the altar.  He turns to the officiant, bows, and sings:}
+
 \includescore{common/jubedomne}
 
+\rubrics{If the officiant is a priest, the lector sings \emph{Jube, domne benedicere} or pray father a blessing, instead.}
+
+\rubrics{The officiant intones the blessing:}
+
 \includescore{common/noctem}
+
+\rubrics{The lector rises, and, facing the altar, sings the short lesson:}
+
+\bibleref{Short Lesson.}{1. Peter 5.}
 
 \includescore{common/complineread}
 
@@ -114,17 +125,23 @@
 
 \includescore{common/quifecit}
 
+\rubrics{\emph{Pater noster.} altogether in silence.}
+
+\rubrics{Then, if the officiant is a priest, he says the \emph{Confiteor} entirely recto tono, in a low voice.  The Choir replies with \emph{Misereátur tui.}}
+
+\rubrics{If there is no priest present all recite the \emph{Confiteor} as follows:}
+
 \begin{Parallel}{\gcolwidth}{\gcolwidth}
-\firstlatin{C}{onfiteor}{ Deo omnipoténti, %\parfillskip0pt 
+\latin{Confiteor Deo omnipoténti, %\parfillskip0pt 
 beát\ae\ Marí\ae\ semper Vírgini, beáto
 Michaéli Archángelo, beáto Joánni Baptíst\ae, sanctis Apóstolis Petro
-et Paulo, ómnibus Sanctis, [\textit{(if a priest presides)} et tibi, Pater:] quia peccávi nimis cogitatióne,
+et Paulo, et ómnibus Sanctis, [\textit{(if a priest presides)} et tibi, Pater:] quia peccávi nimis cogitatióne,
 verbo et ópere: \textit{(strike breast three times)} \textbf{mea
 culpa, mea culpa, mea máxima culpa.} Ideo precor beátam Maríam semper
 Vírginem, beátum Michaélem Archángelum, beátum Joánnem Baptístam,
-sanctos Apóstolos Petrum et Paulum, omnes Sanctos, [\textit{(if a priest presides)} et te, Pater,] oráre
+sanctos Apóstolos Petrum et Paulum, et omnes Sanctos, [\textit{(if a priest presides)} et te, Pater,] oráre
 pro me ad Dóminum Deum nostrum.}
-\firstvern{I}{ confess}{ to Almighty God, to blessed Mary %\parfillskip0pt 
+\vern{I confess to Almighty God, to blessed Mary %\parfillskip0pt 
 ever Virgin, to blessed Michael the Arch\-angel, to blessed John the
 Baptist, to the holy Apostles Peter and Paul, to all the Saints, [and
 to you, Father,] that I have sinned exceedingly, in thought, word,
@@ -137,13 +154,14 @@ you, Father,] to pray for me to the Lord our God.}
 %\vern{}
 \end{Parallel}
 \smallskip
+\rubrics{The officiant next says:}
 \begin{Parallel}{\gcolwidth}{\gcolwidth}
 \latin{Misereátur nostri omnípotens Deus, et dimíssis peccátis
 nostris, perdúcat nos ad vitam \ae térnam.}
 \vern{May Almighty God have mercy upon you, forgive you your sins, and
 bring you to life everlasting.}
 
-\latin{Amen.}
+\latin{\Rbar Amen.}
 \vern{Amen.}
 
 
@@ -152,30 +170,122 @@ nostrórum, tríbuat nobis omnípotens et miséricors Dóminus.}
 \vern{May the Almighty and merciful Lord grant us pardon, \maltese absolution,
 and remission of our sins.}
 
-\latin{Amen.}
+\latin{\Rbar Amen.}
 \vern{Amen.}
 
 \end{Parallel}
 
+\rubrics{The officiant then sings:}
+
 \includescore{common/converte}
 
+\bibleref{Ferial Tone.}{}
+
+\gresetfirstlineaboveinitial{\Vbar}{\Vbar}
 \includescore{common/deusinadjutorium_ferial}
 
 \chapter{The Psalter}
 
 \section{Sunday and Feasts}
 
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{8. G}
+\includescore{Psalms/sundayantiphoninit}
+
+\rubrics{In paschal time the following antiphon is used instead of the former.}
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
+\psalm{4}
+
+\includescore{Psalms/sundaypsalmsinit1}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/sundaypsalms1
+\end{Parallel}
+
+\psalm{90}
+
+\includescore{Psalms/sundaypsalmsinit2}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/sundaypsalms2
+\end{Parallel}
+
+\psalm{133}
+
+\includescore{Psalms/sundaypsalmsinit3}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/sundaypsalms3
+\end{Parallel}
+
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{8. G}
 \includescore{Psalms/sundayantiphon}
 
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
 \includescore{Psalms/alleluiapaschaltime}
+
 
 \section{Monday}
 
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{8. G}
 \includescore{Psalms/mondayantiphon}
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
+\psalm{6}
+
+\includescore{Psalms/mondaypsalmsinit1}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/mondaypsalms1
+\end{Parallel}
+
+\psalm{7. I}
+
+\includescore{Psalms/mondaypsalmsinit2}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/mondaypsalms2
+\end{Parallel}
+
+\psalm{7. II}
+
+\includescore{Psalms/mondaypsalmsinit3}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/mondaypsalms3
+\end{Parallel}
+
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{8. G}
+\includescore{Psalms/mondayantiphon}
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
+
 
 \section{Tuesday}
 
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{8. G}
 \includescore{Psalms/tuesdayantiphoninit}
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
+\psalm{11}
 
 \includescore{Psalms/tuesdaypsalmincipit1}
 
@@ -183,12 +293,15 @@ and remission of our sins.}
 \input Psalms/tuesdaypsalms1
 \end{Parallel}
 
+\psalm{12}
+
 \includescore{Psalms/tuesdaypsalmincipit2}
 
 \begin{Parallel}{\gcolwidth}{\gcolwidth}
 \input Psalms/tuesdaypsalms2
 \end{Parallel}
 
+\psalm{15}
 
 \includescore{Psalms/tuesdaypsalmincipit3}
 
@@ -196,23 +309,213 @@ and remission of our sins.}
 \input Psalms/tuesdaypsalms3
 \end{Parallel}
 
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{8. G}
 \includescore{Psalms/tuesdayantiphon}
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
 
 \section{Wednesday}
 
+\subsection{Outside Paschal Time}
+
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{3. a}
 \includescore{Psalms/wednesdayantiphon}
+
+\psalm{33. I}
+
+\includescore{Psalms/Wednesdaypsalminit1}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/wednesdaypsalm1
+\end{Parallel}
+
+
+\psalm{33. II}
+
+\includescore{Psalms/Wednesdaypsalminit2}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/wednesdaypsalm2
+\end{Parallel}
+
+
+\psalm{60}
+
+\includescore{Psalms/Wednesdaypsalminit3}
+
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/wednesdaypsalm3
+\end{Parallel}
+
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{3. a}
+\includescore{Psalms/wednesdayantiphon}
+
+\subsection{Wednesday in Paschal Time}
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
+
+\psalm{33. I}
+
+\psalm{33. II}
+
+\psalm{60}
+
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
 
 \section{Thursday}
 
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{8. G}
 \includescore{Psalms/thursdayantiphon}
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
+\psalm{69}
+
+\includescore{Psalms/thursdaypsalminit1}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/thursdaypsalm1
+\end{Parallel}
+
+
+
+\psalm{70. I}
+
+\includescore{Psalms/thursdaypsalminit2}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/thursdaypsalm2
+\end{Parallel}
+
+
+
+\psalm{70. II}
+
 
 \section{Friday}
 
+\subsection{Outside Paschal Time.}
+
+
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{7. c}
 \includescore{Psalms/fridayantiphon}
+
+\psalm{76. I}
+
+\includescore{Psalms/fridaypsalminit1}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/fridaypsalms1
+\end{Parallel}
+
+
+
+\psalm{76. II}
+
+\includescore{Psalms/fridaypsalminit2}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/fridaypsalms2
+\end{Parallel}
+
+
+\psalm{85}
+
+\includescore{Psalms/fridaypsalminit3}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/fridaypsalms3
+\end{Parallel}
+
+
+
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{7. c}
+\includescore{Psalms/fridayantiphon}
+
+
+
+
+\subsection{Friday in Paschal Time.}
+
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
+\psalm{76. I}
+
+
+\psalm{76. II}
+
+\psalm{85}
+
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
+
 
 \section{Saturday}
 
+\subsection{Outside Paschal Time.}
+
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{5. a}
 \includescore{Psalms/saturdayantiphon}
+
+\psalm{87}
+
+\includescore{Psalms/saturdaypsalminit1}
+
+\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\input Psalms/saturdaypsalms1
+\end{Parallel}
+
+
+\psalm{102. I}
+
+\psalm{102. II}
+
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{5. a}
+\includescore{Psalms/saturdayantiphon}
+
+\subsection{Saturday in Paschal Time.}
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
+\psalm{87}
+
+\psalm{102. I}
+
+\psalm{102. II}
+
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
 
 
 
@@ -307,6 +610,11 @@ Regnans per omne saéculum.  Amen.
 
 
 \section{Short Responsory during Easter.}
+
+\includescore{common/inmanus_paschal}
+
+\includescore{common/custodi_paschal}
+
 
 \chapter{The Canticle}
 

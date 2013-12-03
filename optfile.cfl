@@ -1,0 +1,9 @@
+\LettrineOptionsFor{C}{lraise=-0.01}
+\LettrineOptionsFor{G}{lraise=-0.01}
+\LettrineOptionsFor{L}{findent=-0.4em, nindent=0.7em}
+\LettrineOptionsFor{A}{loversize=-0.05,findent=-0.4em, nindent=0.7em}
+\LettrineOptionsFor{P}{nindent=0em}
+\LettrineOptionsFor{V}{nindent=0em}
+\LettrineOptionsFor{O}{lraise=-0.01}
+\LettrineOptionsFor{S}{lraise=-0.01}
+
