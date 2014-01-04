@@ -10,8 +10,9 @@
 \newfontface{\vectis}{Vectis Bold}
 \newfontfamily{\libertine}{Linux Libertine O}
 \newfontface{\versicles}{Versiculum}
-\usepackage{parallel}
-\usepackage{lettrine}
+\newfontface{\inglesh}{Worstveld Sling}
+%\usepackage{parallel}
+%\usepackage{lettrine}
 \newfontface{\cruci}{Juuji}
 \usepackage{gregoriotex}
 %\settrimmedsize{9in}{6in}{*}
@@ -25,6 +26,8 @@
 \setheaderspaces{*}{.8\onelineskip}{*}
 \checkandfixthelayout
 
+\tolerance=1000
+\pretolerance=800
 
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\parindent}{0pt}
@@ -32,22 +35,40 @@
 
 \newlength{\gcolwidth}
 \setlength{\gcolwidth}{0.48\textwidth}
+\newlength{\lcolwidth}
+\setlength{\lcolwidth}{0.53\textwidth}
+\newlength{\vcolwidth}
+\setlength{\vcolwidth}{0.43\textwidth}
 
-\def\latin#1{%
-\selectlanguage{latin}
-\ParallelLText{#1\strut}%
-\selectlanguage{british}%
-\relax %
-}
+\renewcommand\gretranslationformat[1]{{\inglesh \fontsize{14}{10}\selectfont #1}}
 
-\def\vern#1{%
-\ParallelRText{#1\strut}%
-%\ParallelLText{\ \vspace*{1mm}}\ParallelRText{\ \vspace*{1mm}}%
-\ParallelPar %
-%\kern -1mm%
-\relax %
-}
 
+%\def\latin#1{%
+%\selectlanguage{latin}
+%\ParallelLText{#1\strut}%
+%\selectlanguage{british}%
+%\relax %
+%}
+
+%\def\vern#1{%
+%\ParallelRText{\gretranslationformat{#1}\strut}%
+%%\ParallelLText{\ \vspace*{1mm}}\ParallelRText{\ \vspace*{1mm}}%
+%\ParallelPar %
+%%\kern -1mm%
+%\relax %
+%}
+%\def\startParallel{\begin{Parallel}{\lcolwidth}{\vcolwidth}}
+
+%\def\stopParallel{\end{Parallel}}
+
+
+\def\latin#1{\selectlanguage{latin}#1\selectlanguage{british}\\}
+\def\vern#1{{\inglesh \fontsize{14}{11}\selectfont #1}\par}
+
+\def\startParallel{}
+\def\stopParallel{}
+
+\setlength{\parskip}{3pt plus 2pt minus 1pt}
 
 \def\firstlatin#1#2#3{%
 \latin{%
@@ -61,7 +82,7 @@
 \def\firstvern#1#2#3{%
 \vern{%
 \noindent\begin{minipage}[t]{\ParallelRWidth}%
-\lettrine{#1}{#2}#3\strut%\vspace{0.9mm}\vspace{0.13cm}%
+\lettrine{#1}{#2}\gretranslationformat{#3}\strut%\vspace{0.9mm}\vspace{0.13cm}%
 \end{minipage}%
 }%\vspace{-0.2cm}%
 }
@@ -79,9 +100,32 @@
 
 \title{Ad Completorium}
 
+%\chapterstyle{thatcher}
+%\chapterstyle{dowding}
 \chapterstyle{dash}
 
 \begin{document}
+
+%\showthe\parskip
+\showthe\pretolerance
+\showthe\tolerance
+
+%\makeevenhead{myheadings}{\thepage}{}{\leftmark}
+%\makeoddhead{myheadings}{\rightmark}{}{\thepage}
+
+%\createmark{section}{right}{nonumber}{\sectionname}{}
+%\createmark{chapter}{left}{nonumber}{\chaptername}{}
+
+\nouppercaseheads
+\pagestyle{myheadings}
+
+\makeevenhead{myheadings}{\thepage}{\textsc{\leftmark}}{}
+\makeoddhead{myheadings}{}{\textsc{\rightmark}}{\thepage}
+
+\createmark{section}{right}{nonumber}{\sectionname}{}
+\createmark{chapter}{left}{nonumber}{\chaptername}{}
+
+\setcounter{secnumdepth}{0}
 
 \renewcommand\textbf[1]{%
     \pdfliteral direct {2 Tr 0.2 w}%
@@ -115,6 +159,8 @@
 
 \includescore{common/noctem}
 
+\eject
+
 \rubrics{The lector rises, and, facing the altar, sings the short lesson:}
 
 \bibleref{Short Lesson.}{1. Peter 5.}
@@ -131,12 +177,12 @@
 
 \rubrics{If there is no priest present all recite the \emph{Confiteor} as follows:}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{Confiteor Deo omnipoténti, %\parfillskip0pt 
 beát\ae\ Marí\ae\ semper Vírgini, beáto
 Michaéli Archángelo, beáto Joánni Baptíst\ae, sanctis Apóstolis Petro
 et Paulo, et ómnibus Sanctis, [\textit{(if a priest presides)} et tibi, Pater:] quia peccávi nimis cogitatióne,
-verbo et ópere: \textit{(strike breast three times)} \textbf{mea
+verbo et ópere: \textit{(strike breast three times)} \oldtextbf{mea
 culpa, mea culpa, mea máxima culpa.} Ideo precor beátam Maríam semper
 Vírginem, beátum Michaélem Archángelum, beátum Joánnem Baptístam,
 sanctos Apóstolos Petrum et Paulum, et omnes Sanctos, [\textit{(if a priest presides)} et te, Pater,] oráre
@@ -152,10 +198,10 @@ the Baptist, the holy Apostles Peter and Paul, all the Saints, [and
 you, Father,] to pray for me to the Lord our God.}
 %\latin{}
 %\vern{}
-\end{Parallel}
+\stopParallel
 \smallskip
 \rubrics{The officiant next says:}
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{Misereátur nostri omnípotens Deus, et dimíssis peccátis
 nostris, perdúcat nos ad vitam \ae térnam.}
 \vern{May Almighty God have mercy upon you, forgive you your sins, and
@@ -173,7 +219,9 @@ and remission of our sins.}
 \latin{\Rbar Amen.}
 \vern{Amen.}
 
-\end{Parallel}
+\stopParallel
+
+\eject
 
 \rubrics{The officiant then sings:}
 
@@ -188,39 +236,43 @@ and remission of our sins.}
 
 \section{Sunday and Feasts}
 
+\rubrics{The celebrant intones the antiphon to the psalms, either \emph{Miserere} most of the year or \emph{Alleluia} during Paschal tide}
+
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{8. G}
 \includescore{Psalms/sundayantiphoninit}
 
-\rubrics{In paschal time the following antiphon is used instead of the former.}
+\rubrics{P.~T.~stands for Paschal Time.  T.~P.~ stands for Tempore Paschalis.}
 
 \gresetfirstannotation{P. T.}
 \gresetsecondannotation{Ant.}
 \includescore{Psalms/alleluiapaschaltime}
 
+\eject
+
 \psalm{4}
 
 \includescore{Psalms/sundaypsalmsinit1}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/sundaypsalms1
-\end{Parallel}
+\stopParallel
 
 \psalm{90}
 
 \includescore{Psalms/sundaypsalmsinit2}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/sundaypsalms2
-\end{Parallel}
+\stopParallel
 
 \psalm{133}
 
 \includescore{Psalms/sundaypsalmsinit3}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/sundaypsalms3
-\end{Parallel}
+\stopParallel
 
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{8. G}
@@ -245,25 +297,25 @@ and remission of our sins.}
 
 \includescore{Psalms/mondaypsalmsinit1}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/mondaypsalms1
-\end{Parallel}
+\stopParallel
 
 \psalm{7. I}
 
 \includescore{Psalms/mondaypsalmsinit2}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/mondaypsalms2
-\end{Parallel}
+\stopParallel
 
 \psalm{7. II}
 
 \includescore{Psalms/mondaypsalmsinit3}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/mondaypsalms3
-\end{Parallel}
+\stopParallel
 
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{8. G}
@@ -289,25 +341,25 @@ and remission of our sins.}
 
 \includescore{Psalms/tuesdaypsalmincipit1}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/tuesdaypsalms1
-\end{Parallel}
+\stopParallel
 
 \psalm{12}
 
 \includescore{Psalms/tuesdaypsalmincipit2}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/tuesdaypsalms2
-\end{Parallel}
+\stopParallel
 
 \psalm{15}
 
 \includescore{Psalms/tuesdaypsalmincipit3}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/tuesdaypsalms3
-\end{Parallel}
+\stopParallel
 
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{8. G}
@@ -330,18 +382,18 @@ and remission of our sins.}
 
 \includescore{Psalms/Wednesdaypsalminit1}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/wednesdaypsalm1
-\end{Parallel}
+\stopParallel
 
 
 \psalm{33. II}
 
 \includescore{Psalms/Wednesdaypsalminit2}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/wednesdaypsalm2
-\end{Parallel}
+\stopParallel
 
 
 \psalm{60}
@@ -349,9 +401,9 @@ and remission of our sins.}
 \includescore{Psalms/Wednesdaypsalminit3}
 
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/wednesdaypsalm3
-\end{Parallel}
+\stopParallel
 
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{3. a}
@@ -366,9 +418,30 @@ and remission of our sins.}
 
 \psalm{33. I}
 
+\includescore{Psalms/wednesdayeasterpsalm1init.tex}
+
+\startParallel
+\input Psalms/wednesdayeasterpsalm1
+\stopParallel
+
+
 \psalm{33. II}
 
+\includescore{Psalms/wednesdayeasterpsalm2init.tex}
+
+\startParallel
+\input Psalms/wednesdayeasterpsalm2
+\stopParallel
+
+
 \psalm{60}
+
+\includescore{Psalms/wednesdayeasterpsalm3init.tex}
+
+\startParallel
+\input Psalms/wednesdayeasterpsalm3
+\stopParallel
+
 
 
 \gresetfirstannotation{P. T.}
@@ -390,9 +463,9 @@ and remission of our sins.}
 
 \includescore{Psalms/thursdaypsalminit1}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/thursdaypsalm1
-\end{Parallel}
+\stopParallel
 
 
 
@@ -400,13 +473,30 @@ and remission of our sins.}
 
 \includescore{Psalms/thursdaypsalminit2}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/thursdaypsalm2
-\end{Parallel}
-
+\stopParallel
 
 
 \psalm{70. II}
+
+\includescore{Psalms/thursdaypsalminit3}
+
+
+\startParallel
+\input Psalms/thursdaypsalm3
+\stopParallel
+
+
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{8. G}
+\includescore{Psalms/thursdayantiphon}
+
+\gresetfirstannotation{P. T.}
+\gresetsecondannotation{Ant.}
+\includescore{Psalms/alleluiapaschaltime}
+
+
 
 
 \section{Friday}
@@ -422,9 +512,9 @@ and remission of our sins.}
 
 \includescore{Psalms/fridaypsalminit1}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/fridaypsalms1
-\end{Parallel}
+\stopParallel
 
 
 
@@ -432,18 +522,18 @@ and remission of our sins.}
 
 \includescore{Psalms/fridaypsalminit2}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/fridaypsalms2
-\end{Parallel}
+\stopParallel
 
 
 \psalm{85}
 
 \includescore{Psalms/fridaypsalminit3}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/fridaypsalms3
-\end{Parallel}
+\stopParallel
 
 
 
@@ -487,27 +577,27 @@ and remission of our sins.}
 
 \includescore{Psalms/saturdaypsalminit1}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/saturdaypsalms1
-\end{Parallel}
+\stopParallel
 
 
 \psalm{102. I}
 
 \includescore{Psalms/saturdaypsalminit2}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/saturdaypsalms2
-\end{Parallel}
+\stopParallel
 
 
 \psalm{102. II}
 
 \includescore{Psalms/saturdaypsalminit3}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \input Psalms/saturdaypsalms3
-\end{Parallel}
+\stopParallel
 
 
 \gresetfirstannotation{Ant.}
@@ -560,37 +650,56 @@ Regnans per omne saéculum.  Amen.
 
 \section{Advent:}
 
+\rubrics{From the Saturday before the first Sunday of Advent to the night before Christmas Eve.}
+
 \includescore{Hymn/telucisAdvent}
 
 \section{Christmas:}
 
+\rubrics{From Christmas Eve to the 4th January.}
+
 \includescore{Hymn/telucisChristmas}
-
-\section{Holy Family:}
-
-\includescore{Hymn/telucisHolyFamily}
 
 \section{Epiphany:}
 
+\rubrics{From 5th January to 13th January.}
+
 \includescore{Hymn/telucisEpiphany}
 
+\section{Holy Family:}
+
+\rubrics{For the Sunday in the octave of the Epiphany. (same tune as Epiphany, different doxology)}
+
+\includescore{Hymn/telucisHolyFamily}
+
+
 \section{Septuagesima:}
+
+\rubrics{From the night before Septuagesima Sunday, to the Friday before Passion Sunday.}
 
 \includescore{Hymn/telucisLent}
 
 \section{Passiontide:}
 
+\rubrics{From the Saturday before Passion Sunday to Holy Wednesday.}
+
 \includescore{Hymn/telucisPassiontide}
 
 \section{Easter:}
+
+\rubrics{From Easter Sunday to the Tuesday before Ascension.}
 
 \includescore{Hymn/telucisEaster}
 
 \section{Ascension:}
 
+\rubrics{From the night before the Ascension to the Friday before Pentecost.}
+
 \includescore{Hymn/telucisAscension}
 
 \section{Pentecost:}
+
+\rubrics{From the night before Pentecost to the Friday before Trinity Sunday.}
 
 \includescore{Hymn/telucisPentecost}
 
@@ -655,7 +764,7 @@ Regnans per omne saéculum.  Amen.
 
 \section{The Collect}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{Dómine, exaudi oratiónem meam.}
 \vern{O Lord, hear my prayer.}
 \latin{Et clamor meum ad te véniat.}
@@ -682,17 +791,22 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 
 \latin{\Rbar Amen.}
 \vern{Amen.}
-\end{Parallel}
+\stopParallel
 
 \chapter{The Marian Antiphon}
 
 \section{Advent and Christmas}
 
+\bibleref{Solemn tone:}{}
+
 \includescore{MarianAntiphons/almaredemptoris_solemn}
+
+\bibleref{Simple tone:}{}
 
 \includescore{MarianAntiphons/almaredemptoris}
 
 \begin{verse}
+\inglesh \fontsize{14}{11} \selectfont
 Loving Mother of our Saviour, hear thou thy people’s cry\\
 Star of the deep and Portal of the sky!\\
 Mother of Him who thee made from nothing made.\\
@@ -703,7 +817,7 @@ Thou Virgin first and last, let us thy mercy see.
 
 \rubrics{In Advent :}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{\Vbar Angelus D\'omini nunti\'avit Mar\'\i \ae .}
 \vern{The angel of the Lord declared unto Mary.}
 \latin{\Rbar Et conc\'epit de Sp\'\i ritu Sancto.}
@@ -712,13 +826,13 @@ Thou Virgin first and last, let us thy mercy see.
 \vern{Let us pray.}
 \latin{Gr\'atiam tuam, qu\'\ae sumus D\'omine, m\'entibus nostris inf\'unde : \dag \ ut qui, Angelo nunti\'ante, Christi F\'\i lii tui Incarnati\'onem cogn\'ovimus, * per passi\'onem ejus et crucem ad resurrecti\'onis gl\'oriam perduc\'amur.  Per \'eumdem Christum D\'ominum nostrum. \Rbar Amen.}
 \vern{Pour forth, we beseech thee, O Lord, thy grace into our hearts, that we to whom the incarnation of Christ thy Son was made known by the message of an angel, may by his Passion and Cross be brought to the glory of his resurrection.  Through the same Christ our Lord.  Amen.}
-\end{Parallel}
+\stopParallel
 
 \bigskip
 
 \rubrics{From the first Vespers of Christmas onwards :}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{\Vbar Post partum Virgo inviol\'ata permans\'\i sti.}
 \vern{After childbirth, O Virgin, thou didst remain inviolate.}
 \latin{\Rbar Dei G\'enitrix, interc\'ede pro nobis.}
@@ -727,23 +841,28 @@ Thou Virgin first and last, let us thy mercy see.
 \vern{Let us pray.}
 \latin{Deus, qui salutis \ae t\'ern\ae , be\'atae \ Mar\'\i \ae \ virginit\'ate fec\'unda, hum\'ano g\'eneri pr\'\ae mia pr\ae stit\'\i sti : \dag \ tr\'\i bue, qu\'\ae sumus; ut ipsam pro nobis interc\'edere senti\'amus, * per quam mer\'uimus auct\'orem vit\ae \ susc\'\i pere, D\'ominum nostrum Jesum Christum F\'\i lium tuum. \Rbar Amen}
 \vern{O God, Who by the fruitful virginity of blessed Mary, hast given to mankind the rewards of eternal salvation: grant, we beseech You, that we may experience her intercession for us, by whom we deserved to receive the Author of life, our Lord Jesus Christ, Your Son. Amen.}
-\end{Parallel}
+\stopParallel
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{\Vbar Divínum auxílium máneat semper nobíscum.}
 \vern{May the divine assistance remain always with us.}
 \latin{\Rbar Amen.}
 \vern{Amen.}
-\end{Parallel}
+\stopParallel
 
 \
 \section{Septuagesima and Lent}
 
+\bibleref{Solemn tone:}{}
+
 \includescore{MarianAntiphons/averegina_solemn}
+
+\bibleref{Simple tone:}{}
 
 \includescore{MarianAntiphons/averegina}
 
 \begin{verse}
+\inglesh \fontsize{14}{11} \selectfont
 Hail, Queen of heaven;\\
 Hail, Mistress of the Angels;\\
 Hail, root of Jesse;\\
@@ -754,7 +873,7 @@ Farewell, O most beautiful one,
 and pray for us to Christ.
 \end{verse}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{\Vbar Dign\'are me laud\'are te, Virgo sacr\'ata.}
 \vern{Vouchsafe that I may praise thee, O sacred Virgin.}
 \latin{\Rbar Da mihi virt\'utem contra hostes tuos.}
@@ -766,23 +885,28 @@ intercessi\'onis ejus aux\'\i lio, a nostris iniqui\-t\'a\-tibus resurg\'amus.
 Per e\'umdem Christum D\'ominum nostrum.
 \Rbar Amen.}
 \vern{We beseech thee, O Lord, mercifully to assist our infirmity: that like as we do now commemorate Blessed Mary Ever-Virgin, Mother of God; so by the help of her intercession we may die to our former sins and rise again to newness of life. Through the same Christ our Lord. Amen.}
-\end{Parallel}
+\stopParallel
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{\Vbar Divínum auxílium máneat semper nobíscum.}
 \vern{May the divine assistance remain always with us.}
 \latin{\Rbar Amen.}
 \vern{Amen.}
-\end{Parallel}
+\stopParallel
 
 
 \section{Paschaltide}
 
+\bibleref{Solemn tone:}{}
+
 \includescore{MarianAntiphons/reginacaeli_solemn}
+
+\bibleref{Simple tone:}{}
 
 \includescore{MarianAntiphons/reginacaeli}
 
 \begin{verse}
+\inglesh \fontsize{14}{11} \selectfont
 Queen of heaven, rejoice, alleluia.\\
 For He whom thou didst merit to bear, alleluia,\\
 has risen as he said, alleluia.\\
@@ -791,7 +915,7 @@ Rejoice and be glad, O Virgin Mary, alleluia.\\
 For the Lord has truly risen, alleluia.
 \end{verse}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{\Vbar Gaude et l\ae t\'are Virgo Mar\'\i a, allel\'uia.}
 \vern{Rejoice and be glad O Virgin Mary, alleluia.}
 \latin{\Rbar Quia surr\'exit D\'ominus vere, allel\'uia.}
@@ -808,23 +932,28 @@ didst vouchsafe to give joy to the world:
 grant, we beseech thee, that through His Mother, the Virgin Mary,
 we may obtain the joys of everlasting life.
 Through Christ our Lord. Amen.}
-\end{Parallel}
+\stopParallel
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{\Vbar Divínum auxílium máneat semper nobíscum.}
 \vern{May the divine assistance remain always with us.}
 \latin{\Rbar Amen.}
 \vern{Amen.}
-\end{Parallel}
+\stopParallel
 
 
 \section{During the year}
 
+\bibleref{Solemn tone:}{}
+
 \includescore{MarianAntiphons/salveregina_solemn}
+
+\bibleref{Simple tone:}{}
 
 \includescore{MarianAntiphons/salveregina}
 
 \begin{verse}
+\inglesh \fontsize{14}{11} \selectfont
 Hail, holy Queen, Mother of mercy,\\
 hail, our life, our sweetness, and our hope.\\
 To thee do we cry, the children of Eve;\\
@@ -837,7 +966,7 @@ the blessed fruit of thy womb, Jesus:\\
 O clement, O loving, O sweet Virgin Mary.
 \end{verse}
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{\Vbar Ora pro nobis sancta Dei Génitrix.}
 \vern{Pray for us, O holy Mother of God.}
 \latin{\Rbar Ut digni efficiámur promissiónibus Christi.}
@@ -851,15 +980,15 @@ commemorati\'one l{\ae}t\'amur, * ejus pia intercessi\'one ab
 inst\'antibus malis et a mortis perp\'etua liber\'emur.
 Per e\'umdem Christum D\'ominum nostrum. \Rbar Amen.}
 \vern{Almighty, everlasting God, who by the co-operation of the Holy Spirit didst prepare the body and soul of the glorious Virgin-Mother Mary to become a dwelling-place meet for thy Son: grant that as we rejoice in her commemoration; so by her fervent intercession we may be delivered from present evils and from everlasting death. Through the same Christ our Lord. Amen.}
-\end{Parallel}
+\stopParallel
 
 
-\begin{Parallel}{\gcolwidth}{\gcolwidth}
+\startParallel
 \latin{\Vbar Divínum auxílium máneat semper nobíscum.}
 \vern{May the divine assistance remain always with us.}
 \latin{\Rbar Amen.}
 \vern{Amen.}
-\end{Parallel}
+\stopParallel
 
 
 \appendix
