@@ -1,10 +1,10 @@
-\documentclass[a5paper,12pt,twoside,openany]{memoir}
+\documentclass[a5paper,11pt,twoside,openany]{memoir}
 \usepackage[british,latin]{babel}
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
-%\setmainfont[Numbers=OldStyle]{Linux Libertine O}
-\setmainfont{EB Garamond}
-\newfontfamily{\anavio}{EB Garamond}
+\setmainfont[Numbers=OldStyle]{Linux Libertine O}
+%\setmainfont{EB Garamond}
+\newfontfamily{\anavio}{Linux Libertine O}
 %\newfontfamily{\vectis}{Vectis}
 \newfontface{\vectis}{Vectis Bold}
 \newfontface{\versicles}{Versiculum}
@@ -92,6 +92,7 @@
 
 \let\oldtextbf\textbf
 
+
 \newcommand\rubrics[1]{\textit{#1}}
 \newcommand\bibleref[2]{\oldtextbf{#1} \hfill \textit{#2}}
 \newcommand\psalm[1]{~ \hfill \oldtextbf{Psalm #1.} \hfill ~}
@@ -105,8 +106,8 @@
 \begin{document}
 
 %\showthe\parskip
-\showthe\pretolerance
-\showthe\tolerance
+%\showthe\pretolerance
+%\showthe\tolerance
 
 %\makeevenhead{myheadings}{\thepage}{}{\leftmark}
 %\makeoddhead{myheadings}{\rightmark}{}{\thepage}
@@ -125,21 +126,21 @@
 
 \setcounter{secnumdepth}{0}
 
-\renewcommand\textbf[1]{%
-    \pdfliteral direct {2 Tr 0.2 w}%
-     \oldtextbf{#1}%
-    \pdfliteral direct {0 Tr 0 w}%
-}
-\newcommand\embolden[1]{%
-    \pdfliteral direct {2 Tr 0.2 w}%
-     #1%
-    \pdfliteral direct {0 Tr 0 w}%
-}
-\renewcommand\greboldfont[1]{%
-    \pdfliteral direct {2 Tr 0.2 w}%
-    \oldtextbf{#1}%
-    \pdfliteral direct {0 Tr 0 w}%
-}
+%\renewcommand\textbf[1]{%
+%    \pdfliteral direct {2 Tr 0.2 w}%
+%     \oldtextbf{#1}%
+%    \pdfliteral direct {0 Tr 0 w}%
+%}
+%\newcommand\embolden[1]{%
+%    \pdfliteral direct {2 Tr 0.2 w}%
+%     #1%
+%    \pdfliteral direct {0 Tr 0 w}%
+%}
+%\renewcommand\greboldfont[1]{%
+%    \pdfliteral direct {2 Tr 0.2 w}%
+%    \oldtextbf{#1}%
+%    \pdfliteral direct {0 Tr 0 w}%
+%}
 
 \maketitle
 
@@ -157,7 +158,7 @@
 
 \includescore{common/noctem}
 
-\eject
+%\eject
 
 \rubrics{The lector rises, and, facing the altar, sings the short lesson:}
 
@@ -219,7 +220,7 @@ and remission of our sins.}
 
 \stopParallel
 
-\eject
+%\eject
 
 \rubrics{The officiant then sings:}
 
@@ -246,7 +247,7 @@ and remission of our sins.}
 \gresetsecondannotation{Ant.}
 \includescore{Psalms/alleluiapaschaltime}
 
-\eject
+%\eject
 
 \psalm{4}
 
