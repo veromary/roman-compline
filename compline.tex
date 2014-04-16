@@ -59,8 +59,10 @@
 
 %\def\stopParallel{\end{Parallel}}
 
+\newcounter{versecount}
+\setcounter{versecount}{0}
 
-\def\latin#1{\selectlanguage{latin}#1\selectlanguage{british}\\}
+\def\latin#1{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\selectlanguage{latin}#1\selectlanguage{british}\\}
 \def\vern#1{{\inglesh \fontsize{14}{11}\selectfont #1}\par}
 
 \def\startParallel{}
@@ -255,12 +257,14 @@ and remission of our sins.}
 
 \includescore{Psalms/sundaypsalmsinit1}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/sundaypsalms1
 \stopParallel
 
 \psalm{90}
 
+\setcounter{versecount}{1}
 \includescore{Psalms/sundaypsalmsinit2}
 
 \startParallel
@@ -271,6 +275,7 @@ and remission of our sins.}
 
 \includescore{Psalms/sundaypsalmsinit3}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/sundaypsalms3
 \stopParallel
@@ -298,6 +303,7 @@ and remission of our sins.}
 
 \includescore{Psalms/mondaypsalmsinit1}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/mondaypsalms1
 \stopParallel
@@ -306,6 +312,7 @@ and remission of our sins.}
 
 \includescore{Psalms/mondaypsalmsinit2}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/mondaypsalms2
 \stopParallel
@@ -314,6 +321,8 @@ and remission of our sins.}
 
 \includescore{Psalms/mondaypsalmsinit3}
 
+
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/mondaypsalms3
 \stopParallel
@@ -342,6 +351,7 @@ and remission of our sins.}
 
 \includescore{Psalms/tuesdaypsalmincipit1}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/tuesdaypsalms1
 \stopParallel
@@ -350,6 +360,7 @@ and remission of our sins.}
 
 \includescore{Psalms/tuesdaypsalmincipit2}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/tuesdaypsalms2
 \stopParallel
@@ -358,6 +369,7 @@ and remission of our sins.}
 
 \includescore{Psalms/tuesdaypsalmincipit3}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/tuesdaypsalms3
 \stopParallel
@@ -383,6 +395,7 @@ and remission of our sins.}
 
 \includescore{Psalms/Wednesdaypsalminit1}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/wednesdaypsalm1
 \stopParallel
@@ -392,6 +405,7 @@ and remission of our sins.}
 
 \includescore{Psalms/Wednesdaypsalminit2}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/wednesdaypsalm2
 \stopParallel
@@ -402,6 +416,7 @@ and remission of our sins.}
 \includescore{Psalms/Wednesdaypsalminit3}
 
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/wednesdaypsalm3
 \stopParallel
@@ -421,6 +436,7 @@ and remission of our sins.}
 
 \includescore{Psalms/wednesdayeasterpsalm1init.tex}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/wednesdayeasterpsalm1
 \stopParallel
@@ -430,6 +446,7 @@ and remission of our sins.}
 
 \includescore{Psalms/wednesdayeasterpsalm2init.tex}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/wednesdayeasterpsalm2
 \stopParallel
@@ -439,6 +456,7 @@ and remission of our sins.}
 
 \includescore{Psalms/wednesdayeasterpsalm3init.tex}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/wednesdayeasterpsalm3
 \stopParallel
@@ -464,6 +482,7 @@ and remission of our sins.}
 
 \includescore{Psalms/thursdaypsalminit1}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/thursdaypsalm1
 \stopParallel
@@ -474,6 +493,7 @@ and remission of our sins.}
 
 \includescore{Psalms/thursdaypsalminit2}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/thursdaypsalm2
 \stopParallel
@@ -484,6 +504,7 @@ and remission of our sins.}
 \includescore{Psalms/thursdaypsalminit3}
 
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/thursdaypsalm3
 \stopParallel
@@ -513,6 +534,7 @@ and remission of our sins.}
 
 \includescore{Psalms/fridaypsalminit1}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/fridaypsalms1
 \stopParallel
@@ -523,6 +545,7 @@ and remission of our sins.}
 
 \includescore{Psalms/fridaypsalminit2}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/fridaypsalms2
 \stopParallel
@@ -532,6 +555,7 @@ and remission of our sins.}
 
 \includescore{Psalms/fridaypsalminit3}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/fridaypsalms3
 \stopParallel
@@ -578,6 +602,7 @@ and remission of our sins.}
 
 \includescore{Psalms/saturdaypsalminit1}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/saturdaypsalms1
 \stopParallel
@@ -587,6 +612,7 @@ and remission of our sins.}
 
 \includescore{Psalms/saturdaypsalminit2}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/saturdaypsalms2
 \stopParallel
@@ -596,6 +622,7 @@ and remission of our sins.}
 
 \includescore{Psalms/saturdaypsalminit3}
 
+\setcounter{versecount}{1}
 \startParallel
 \input Psalms/saturdaypsalms3
 \stopParallel
@@ -622,6 +649,7 @@ and remission of our sins.}
 \gresetsecondannotation{Ant.}
 \includescore{Psalms/alleluiapaschaltime}
 
+\setcounter{versecount}{0}
 
 
 
@@ -1059,5 +1087,20 @@ Per e\'umdem Christum D\'ominum nostrum. \Rbar Amen.}
 
 \chapter{All Souls' Day}
 
+Start with the Confiteor, then these psalms without antiphon
+
+Psalm 122, 141, 142
+
+Requiem eternam instead of Gloria Patri
+
+Canticle
+
+Pater noster
+
+Oremus
+
+Propitiare
+
+page 1742 Liber Usualis
 
 \end{document}
