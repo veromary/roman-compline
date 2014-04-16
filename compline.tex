@@ -147,6 +147,7 @@
 \tableofcontents
 
 \chapter{The beginning}
+\label{beginning}
 
 \rubrics{The lector stands in the middle, before the altar.  He turns to the officiant, bows, and sings:}
 
@@ -158,7 +159,7 @@
 
 \includescore{common/noctem}
 
-%\eject
+\eject
 
 \rubrics{The lector rises, and, facing the altar, sings the short lesson:}
 
@@ -234,6 +235,7 @@ and remission of our sins.}
 \chapter{The Psalter}
 
 \section{Sunday and Feasts}
+\label{sunday}
 
 \rubrics{The celebrant intones the antiphon to the psalms, either \emph{Miserere} most of the year or \emph{Alleluia} during Paschal tide}
 
@@ -649,7 +651,7 @@ Regnans per omne saéculum.  Amen.
 
 \section{Advent:}
 
-\rubrics{From the Saturday before the first Sunday of Advent to the night before Christmas Eve.}
+\rubrics{This Tone is used from the Saturday before the first Sunday of Advent to the night before Christmas Eve, even on Feasts. But on the Feast of the Immaculate Conception and during its Octave, the ordinary Tone for the Feasts of the Blessed Virgin Mary is used, except on the Sunday within the Octave, and on the Octave day itself if this should fall on a Sunday, when the Tone for Advent is used, with the doxology of the Sunday.}
 
 \includescore{Hymn/telucisAdvent}
 
@@ -657,13 +659,17 @@ Regnans per omne saéculum.  Amen.
 
 \section{Christmas:}
 
-\rubrics{From Christmas Eve to the 4th January.}
+\rubrics{This Tone (or the following alternative) is used from Christmas Eve to the 4th January, even in the Office of Saints.}
 
 \includescore{Hymn/telucisChristmas}
 
+\subsection{Alternative tune Jesu Redemptor omnium}
+
+\includescore{Hymn/telucisChristmasVespers}
+
 \section{Epiphany:}
 
-\rubrics{From 5th January to 13th January.}
+\rubrics{From 5th January to 13th January for Offices of the Time only.}
 
 \includescore{Hymn/telucisEpiphany}
 
@@ -676,13 +682,13 @@ Regnans per omne saéculum.  Amen.
 
 \section{Lent:}
 
-\rubrics{From Ash Wednesday, to the Friday before Passion Sunday.}
+\rubrics{This tone is used from Ash Wednesday, or Saturday before the first Sunday of Lent to the Friday before Passion Sunday, at the Office of the Sunday and of the feria only.}
 
 \includescore{Hymn/telucisLent}
 
 \section{Passiontide:}
 
-\rubrics{From the Saturday before Passion Sunday to Holy Wednesday.}
+\rubrics{This tone is used from the Saturday before Passion Sunday to Wednesday of Holy Week, even on Feats, unless the contrary be indicated.}
 
 \includescore{Hymn/telucisPassiontide}
 
@@ -758,6 +764,7 @@ Regnans per omne saéculum.  Amen.
 \gresetsecondannotation{3. a.}
 \includescore{common/salvanosinit}
 
+\label{canticle}
 \bibleref{Canticle of Simeon.}{Luke 2.}
 
 \includescore{common/nuncdimittis}
@@ -766,6 +773,7 @@ Regnans per omne saéculum.  Amen.
 \includescore{common/salvanos}
 
 \section{The Collect}
+\label{collect}
 
 \startParallel
 \latin{Dómine, exaudi oratiónem meam.}
@@ -900,6 +908,7 @@ Per e\'umdem Christum D\'ominum nostrum.
 
 
 \section{Paschaltide}
+\label{reginacaeli}
 
 \bibleref{Solemn tone:}{}
 
@@ -1001,7 +1010,9 @@ Per e\'umdem Christum D\'ominum nostrum. \Rbar Amen.}
 
 \rubrics{On Maundy Thursday, Compline should be celebrated after the altars have been stripped, and on Good Friday at some time after the Solemn Liturgy.  No candles should be lit, and there should be no singing.  On Holy Saturday, Compline is celebrated only by those who have not attended the Vigil.}
 
-\rubrics{Whoever presides should give a sign for the examination of conscience to begin, if this be customary, and the Hour begins simply with the Confiteor, Misereatur and Indulgentiam on a monotone.  The first psalm is simply commenced. There are no antiphons, and the Gloria Patri is omitted.  The voice is lowered on the last syllable of each verse of the psalms and Canticle and also of the Collect.}
+\rubrics{Whoever presides should give a sign for the examination of conscience to begin, if this be customary, and the Hour begins simply with the Confiteor, Misereatur and Indulgentiam on a monotone.  The first psalm is simply commenced (Cum invocarem p.~\pageref{sunday}). There are no antiphons, and the Gloria Patri is omitted.  The voice is dropped a whole tone on the last syllable of each verse of the psalms.}
+
+\rubrics{After the three psalms the Canticle Nunc dimittis is recited in the same manner p.~\pageref{canticle}, no antiphons, voice lowered on last syllable.}
 
 \rubrics{On Maundy Thursday, all then kneel and recite together the following: }
 
@@ -1019,7 +1030,7 @@ Per e\'umdem Christum D\'ominum nostrum. \Rbar Amen.}
 
 \rubrics{All say the Pater Noster silently}
 
-\rubrics{The Collect is said without Oremus}
+\rubrics{The Collect is said without Oremus p.~\pageref{collect} again dropping the voice on the last syllable as in the psalms.}
 
 \rubrics{The conclusion \emph{Per Dóminum.} is said silently on Thursday and Friday but aloud on Saturday.}
 
@@ -1027,8 +1038,26 @@ Per e\'umdem Christum D\'ominum nostrum. \Rbar Amen.}
 
 \chapter{Easter Octave}
 
+\rubrics{Begin at the beginning p.~\pageref{beginning} through to the Deus in adjutorium.}
+
+\rubrics{Skip the antiphon and go straight into the Psalms for Sunday: Cum invocárem p.~\pageref{sunday}}
+
+\rubrics{Finish with this quadruple Alleluia:}
+
+\includescore{Psalms/octavealleluia}
+
+\rubrics{Then straight into the Canticle without antiphon:}
+
+\includescore{Canticle/easteroctavenunc}
+
+\rubrics{Finish with this antiphon:}
+
+\includescore{Canticle/an--haec_dies--solesmes}
+
+\rubrics{Then go to the Collect p.~\pageref{collect} with all that follows.}
+
+
 \chapter{All Souls' Day}
 
-Tones - could be incorporated in the body.
 
 \end{document}
