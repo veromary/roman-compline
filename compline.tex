@@ -1,4 +1,4 @@
-\documentclass[a5paper,11pt,twoside,openany]{memoir}
+\documentclass[a5paper,12pt,twoside,openany]{memoir}
 \usepackage[british,latin]{babel}
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
@@ -19,7 +19,7 @@
 %\addtolength{\trimedge}{-\paperwidth}
 \settypeblocksize{170mm}{116mm}{*} % Was 101mm in a5
 \setulmargins{*}{*}{1.4}
-\setlrmargins{*}{*}{1.6}
+\setlrmargins{*}{*}{1.2}
 \setheadfoot{\onelineskip}{2\onelineskip}
 \setheaderspaces{*}{.8\onelineskip}{*}
 \checkandfixthelayout
@@ -40,6 +40,7 @@
 
 \renewcommand\gretranslationformat[1]{{\inglesh \fontsize{14}{10}\selectfont #1}}
 
+\setgrefactor{16}
 
 %\def\latin#1{%
 %\selectlanguage{latin}
@@ -675,15 +676,35 @@ and remission of our sins. \qquad Amen.}
 
 \includescore{Hymn/telucisFeria}
 
+\begin{minipage}[t]{\gcolwidth}
 Procul recédant sómnia,\\
 Et nóctium phantásmata:\\
 Hostémque nostrum cómprime,\\
-Ne polluántur córpora.
-
+Ne polluántur córpora.\\
+ ~ \\
 Praésta, Pater piíssime,\\
 Patríque compar Unice,\\
 Cum Spíritu Paráclito,\\
-Regnans per omne saéculum.  Amen.
+Regnans per omne saéculum.\\
+ ~ \\
+Amen.
+\end{minipage}
+\begin{minipage}[t]{\gcolwidth}
+\inglesh To thee before the close of day,
+Creator of the world, we pray
+That, with thy wonted favour, thou
+Wouldst be our guard and keeper now.
+
+From all ill dreams defend our sight,
+From fears and terrors of the night;
+Withhold from us our ghostly foe,
+That spot of sin we may not know.
+
+O Father, that we ask be done,
+Through Jesus Christ, thine only Son,
+Who, with the Holy Ghost and thee,
+Doth live and reign eternally. Amen.
+\end{minipage}
 
 \section{Advent:}
 
@@ -1163,17 +1184,57 @@ Psalm 122, 141, 142
 \input Psalms/allsouls3vv
 \stopParallel
 
+\section{Canticle}
 
-Requiem eternam instead of Gloria Patri
+\includescore{Canticle/allsoulsv1}
 
-Canticle
+%\setcounter{versecount}{1}
+%\startParallel
+%\input Canticle/allsoulsvv
+%\stopParallel
 
-Pater noster
 
-Oremus
 
-Propitiare
+\setcounter{versecount}{0}
 
-page 1742 Liber Usualis
+
+
+\rubrics{All kneel to recite the \emph{Pater noster} silently, concluding with:}
+
+\startParallel
+\latin{\Vbar Et ne nos indúcas in tentatiónem.}
+\vern{And lead us not into temptation.}
+\latin{\Rbar Sed líbera nos a malo.}
+\vern{But deliver us from evil.}
+\latin{\Vbar A porta ínferi.}
+\vern{From the gate of hell.}
+\latin{\Rbar Erue, Dómine, ánimas eórum.}
+\vern{Deliver, O Lord, their souls.}
+\latin{\Vbar Requiéscant in pace.}
+\vern{May they rest in peace.}
+\latin{\Rbar Amen.}
+\vern{Amen.}
+\latin{\Vbar Dómine, exaudi oratiónem meam.}
+\vern{O Lord, hear my prayer.}
+\latin{\Rbar Et clamor meus ad te véniat.}
+\vern{And let my cry come unto Thee.}\latin{Oremus.}
+\vern{Let us pray.}
+\latin{Propitiáre, quaésumus, Dómine, animábus ómnium famulórum famularúmque tuárum, pro quibus majestátem tuam supplíciter exorámus: \dag\ ut, per haec piae deprecatiónis offícia, * perveníre mereántur ad réquiem sempitérnam. Per Dóminum nostrum Jesum Christum Fílium tuum, \dag\ qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, * per ómnia saécula saeculórum.} 
+\vern{In merciful forgiveness, O Lord, look down upon the souls of all thy servants and handmaids, for whom we humbly entreat thy majesty: that, by our prayers of pious supplication, they may be counted worthy to enter thine everlasting rest. Through our Lord Jesus Christ, thy Son, who livest and reignest with Thee in the unity of the Holy Spirit, one God for ever and ever.}
+\latin{\Rbar Amen.}
+\vern{Amen.}
+\latin{\Vbar Réquiem ætérnam dona eis Dómine.}
+\vern{Eternal rest grant unto them, O Lord.}
+\latin{\Rbar Et lux perpétua lúceat eis.}
+\vern{And may perpetual light shine upon them.}
+\latin{\Vbar Requiéscant in pace.}
+\vern{May they rest in peace.}
+\latin{\Rbar Amen.}
+\vern{Amen.}
+\stopParallel
+
+\rubrics{Thus ends Compline, nothing further is added.}
+
+%page 1742 Liber Usualis
 
 \end{document}
