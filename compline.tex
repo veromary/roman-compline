@@ -12,7 +12,7 @@
 %\usepackage{parallel}
 %\usepackage{lettrine}
 \newfontface{\cruci}{Juuji}
-\usepackage{gregoriotex}
+\usepackage[]{gregoriotex}
 %\settrimmedsize{9in}{6in}{*}
 \setlength{\trimtop}{0pt}
 \setlength{\trimedge}{0pt}
@@ -107,6 +107,8 @@
 \chapterstyle{dash}
 
 \begin{document}
+
+\autocompilegabc
 
 %\showthe\parskip
 %\showthe\pretolerance
@@ -244,7 +246,7 @@ and remission of our sins. \qquad Amen.}
 
 \rubrics{The celebrant intones the antiphon to the psalms, either \emph{Miserere} most of the year or \emph{Alleluia} during Paschal tide}
 
-\setaboveinitialseparation{4pt}
+%\setaboveinitialseparation{4pt}
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{8. G}
 \includescore{Psalms/sundayantiphoninit}
@@ -395,6 +397,8 @@ and remission of our sins. \qquad Amen.}
 
 \subsection{Outside Paschal Time}
 
+\rubrics{for Paschaltide, see p.~\pageref{wed-pt}.}
+
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{3. a}
 \includescore{Psalms/wednesdayantiphoninit}
@@ -491,6 +495,7 @@ and remission of our sins. \qquad Amen.}
 
 \subsection{Outside Paschal Time.}
 
+\rubrics{for Paschaltide, see p.~\pageref{fri-pt}.}
 
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{7. c}
@@ -541,6 +546,8 @@ and remission of our sins. \qquad Amen.}
 \section{Saturday}
 
 \subsection{Outside Paschal Time.}
+
+\rubrics{For Paschaltide see p.~\pageref{sat-pt}.}
 
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{5. a}
@@ -638,7 +645,7 @@ Doth live and reign eternally. Amen.
 \gresetfirstannotation{2.}
 \includescore{Hymn/telucisAdvent}
 
-\newpage
+%\newpage
 
 \section{Christmas:}
 
@@ -659,7 +666,7 @@ Doth live and reign eternally. Amen.
 
 \section{Epiphany:}
 
-\rubrics{From 5th January to 13th January for Offices of the Time only.}
+\rubrics{From the Eve of the Epiphany on the 5th January to the Octave of the Epiphany and feast of the Circumsion of Our Lord on the 13th January.}
 
 \gresetfirstannotation{8.}
 \includescore{Hymn/telucisEpiphany}
@@ -669,9 +676,9 @@ Doth live and reign eternally. Amen.
 
 \section{Holy Family:}
 
-\rubrics{For the Sunday in the octave of the Epiphany. (same tune as Epiphany, different doxology)}
+\rubrics{For the Sunday in the octave of the Epiphany (7-13 February). The same tune is sung as for the Epiphany, but the last verse (also known as the doxology) has a different text.  Formerly many feasts had proper doxologies.}
 
-\gresetfirstannotation{8.}
+%\gresetfirstannotation{8.}
 \includescore{Hymn/telucisHolyFamily}
 
 \goodbreak
@@ -769,11 +776,14 @@ Doth live and reign eternally. Amen.
 
 
 
-\chapter{Chapter and Responsory}
+\chapter{The end is nigh!}
+
 
 \includescore{common/tuautem}
 
-\section{Short Responsory during the year.}
+
+
+\textbf{Short Responsory during the year.}
 
 \includescore{common/inmanus_duringyear}
 
@@ -781,21 +791,26 @@ Doth live and reign eternally. Amen.
 
 \rubrics{During Passiontide the \emph{Glória Patri} in the short responsory is omitted.}
 
-\section{Short Responsory during Advent.}
+\bigskip
+
+\textbf{Short Responsory during Advent.}
 
 \includescore{common/inmanus_advent}
 
 \includescore{common/custodi_advent}
 
 
-\section{Short Responsory during Easter.}
+\bigskip
+
+\textbf{Short Responsory during Easter.}
 
 \includescore{common/inmanus_paschal}
 
 \includescore{common/custodi_paschal}
 
 
-\chapter{The Canticle and Collect}
+%\chapter{The Canticle and Collect}
+\section{The Canticle}
 
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{3. a.}
@@ -841,10 +856,14 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 \vern{Amen.}
 \stopParallel
 
+\rubrics{Then follows the Marian Antiphon of the season: \emph{Alma Redemptoris Mater} for Advent and Christmas, p.~\pageref{almaredem}; \emph{Ave Regina Caelorum} for Candlemas to Holy Wednesday, p.~\pageref{averegina}; \emph{Regina Caeli} for Easter, p.~\pageref{reginacaeli} and lastly the \emph{Salve Regina}, p.~\pageref{salveregina}.}
+
+
+
 \chapter{The Marian Antiphon}
 
 \section{Advent and Christmas}
-
+\label{almaredem}
 \bibleref{Solemn tone:}{}
 
 \gresetfirstannotation{Ant.}
@@ -875,14 +894,10 @@ Thou Virgin first and last, let us thy mercy see.
 \vern{And she conceived by the Holy Spirit.}
 \latin{Or\'emus.}
 \vern{Let us pray.}
-\latin{Gr\'atiam tuam, qu\'\ae sumus D\'omine, m\'entibus nostris inf\'unde : \dag \ ut qui, Angelo nunti\'ante, Christi F\'\i lii tui Incarnati\'onem cogn\'ovimus, * per passi\'onem ejus et crucem ad resurrecti\'onis gl\'oriam perduc\'amur.  Per \'eumdem Christum D\'ominum nostrum. }
-\vern{Pour forth, we beseech thee, O Lord, thy grace into our hearts, that we to whom the incarnation of Christ thy Son was made known by the message of an angel, may by his Passion and Cross be brought to the glory of his resurrection.  Through the same Christ our Lord. }
-\latin{\Rbar Amen.}
-\vern{Amen.}
-\latin{\Vbar Divínum auxílium máneat semper nobíscum.}
-\vern{May the divine assistance remain always with us.}
-\latin{\Rbar Amen.}
-\vern{Amen.}
+\latin{Gr\'atiam tuam, qu\'\ae sumus D\'omine, m\'entibus nostris inf\'unde : \dag \ ut qui, Angelo nunti\'ante, Christi F\'\i lii tui Incarnati\'onem cogn\'ovimus, * per passi\'onem ejus et crucem ad resurrecti\'onis gl\'oriam perduc\'amur.  Per \'eumdem Christum D\'ominum nostrum. \Rbar Amen.}
+\vern{Pour forth, we beseech thee, O Lord, thy grace into our hearts, that we to whom the incarnation of Christ thy Son was made known by the message of an angel, may by his Passion and Cross be brought to the glory of his resurrection.  Through the same Christ our Lord. Amen.}
+\latin{\Vbar Divínum auxílium máneat semper nobíscum. \Rbar Amen.}
+\vern{May the divine assistance remain always with us. Amen.}
 \stopParallel
 
 
@@ -910,8 +925,8 @@ Thou Virgin first and last, let us thy mercy see.
 %\vern{Amen.}
 %\stopParallel
 
-\
 \section{Septuagesima and Lent}
+\label{averegina}
 
 \bibleref{Solemn tone:}{}
 
@@ -1015,7 +1030,7 @@ Through Christ our Lord. Amen.}
 
 
 \section{During the year}
-
+\label{salveregina}
 \bibleref{Solemn tone:}{}
 
 \gresetfirstannotation{Ant.}
@@ -1124,20 +1139,41 @@ again dropping the voice on the last syllable as in the psalms.}
 
 \includescore{Canticle/easteroctavenunc}
 
-\rubrics{Finish with this antiphon:}
+%\rubrics{Finish with this antiphon:}
 
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{2.}
 \includescore{Canticle/an--haec_dies--solesmes}
 
-\rubrics{Then go to the Collect p.~\pageref{collect} with all that follows.}
+\rubrics{Then the Collect as usual, with all that follows.}
 
+\startParallel
+\latin{\Vbar Dómine, exaudi oratiónem meam.}
+\vern{O Lord, hear my prayer.}
+\latin{\Rbar Et clamor meus ad te véniat.}
+\vern{And let my cry come unto Thee.}
+\latin{Orémus. Vísita, quæsumus, Dómine, habitatiónem istam, et omnes insídias inimíci ab ea lónge repélle: \dag\ Ángeli tui sancti hábitent in ea, qui nos in pace custódiant; * et benedíctio tua sit super nos semper.
+Per Dóminum nostrum Jesum Christum, Filium tuum: \dag\ qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, * per ómnia sǽcula sæculórum. \Rbar Amen.}
+\vern{Let us pray. Visit we beseech thee, O Lord, this dwelling, and drive far from it the snares of the enemy. Let thy holy angels dwell herein to preserve us in peace and let thy blessing be always upon us.
+Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.}
+\latin{\Vbar Dómine, exaudi oratiónem meam.}
+\vern{O Lord, hear my prayer.}
+\latin{\Rbar Et clamor meus ad te véniat.}
+\vern{And let my cry come unto Thee.}
+\latin{\Vbar Benedicámus Dómino. \Rbar Deo grátias.}
+\vern{Let us bless the Lord. Thanks be to God.}
+\latin{Benedícat et custódiat nos omnípotens et miséricors Dóminus, \maltese Pater, et Fílius, et Spíritus Sanctus. \Rbar Amen.}
+\vern{The almighty and merciful Lord the Father, the Son and the Holy Spirit bless us and keep us. Amen.}
+\stopParallel
+
+\rubrics{Then Regina Caeli, p.~\pageref{reginacaeli}.}
 
 \chapter{Paschal psalmody}
 
 \rubrics{Most of the psalms already use mode 8G, except Wednesday, Friday and Saturday.  The following psalms have the same words, but all set to 8G.}
 
 \subsection{Wednesday in Paschal Time}
+\label{wed-pt}
 
 \gresetfirstannotation{P. T.}
 \gresetsecondannotation{Ant.}
@@ -1180,7 +1216,7 @@ again dropping the voice on the last syllable as in the psalms.}
 \includescore{Psalms/alleluiapaschal}
 
 \subsection{Friday in Paschal Time.}
-
+\label{fri-pt}
 
 \gresetfirstannotation{P. T.}
 \gresetsecondannotation{Ant.}
@@ -1223,6 +1259,7 @@ again dropping the voice on the last syllable as in the psalms.}
 \includescore{Psalms/alleluiapaschal}
 
 \subsection{Saturday in Paschal Time.}
+\label{sat-pt}
 
 \gresetfirstannotation{P. T.}
 \gresetsecondannotation{Ant.}
