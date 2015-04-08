@@ -1,4 +1,4 @@
-\documentclass[a5paper,12pt,twoside,openany]{memoir}
+\documentclass[a5paper,12pt,twoside,openany,oldfontcommands]{memoir}
 \usepackage[british,latin]{babel}
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
@@ -244,6 +244,7 @@ and remission of our sins. \qquad Amen.}
 
 \rubrics{The celebrant intones the antiphon to the psalms, either \emph{Miserere} most of the year or \emph{Alleluia} during Paschal tide}
 
+\setaboveinitialseparation{4pt}
 \gresetfirstannotation{Ant.}
 \gresetsecondannotation{8. G}
 \includescore{Psalms/sundayantiphoninit}
@@ -587,17 +588,17 @@ and remission of our sins. \qquad Amen.}
 
 \section{Sundays and minor feasts:}
 
-\gresetsecondannotation{8.}
+\gresetfirstannotation{8.}
 \includescore{Hymn/telucisRegular}
 
 \section{Feasts:}
 
-\gresetsecondannotation{4.}
+\gresetfirstannotation{4.}
 \includescore{Hymn/telucisFeasts}
 
 \section{Ferias:}
 
-\gresetsecondannotation{8.}
+\gresetfirstannotation{8.}
 \includescore{Hymn/telucisFeria}
 
 \begin{minipage}[t]{\gcolwidth}
@@ -634,7 +635,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{This Tone is used from the Saturday before the first Sunday of Advent to the night before Christmas Eve, even on Feasts. But on the Feast of the Immaculate Conception and during its Octave, the ordinary Tone for the Feasts of the Blessed Virgin Mary is used, except on the Sunday within the Octave, and on the Octave day itself if this should fall on a Sunday, when the Tone for Advent is used, with the doxology of the Sunday.}
 
-\gresetsecondannotation{2.}
+\gresetfirstannotation{2.}
 \includescore{Hymn/telucisAdvent}
 
 \newpage
@@ -644,14 +645,14 @@ Doth live and reign eternally. Amen.
 \label{TLchristmas}
 \rubrics{This Tone (or the following alternative) is used from Christmas Eve to the 4th January, even in the Office of Saints.}
 
-\gresetsecondannotation{8.}
+\gresetfirstannotation{8.}
 \includescore{Hymn/telucisChristmas}
 
 \subsection{Alternative tune Jesu Redemptor omnium}
 
 \rubrics{This is the tune for the Christmas Vespers hymn.}
 
-\gresetsecondannotation{1.}
+\gresetfirstannotation{1.}
 \includescore{Hymn/telucisChristmasVespers}
 
 \goodbreak
@@ -660,7 +661,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{From 5th January to 13th January for Offices of the Time only.}
 
-\gresetsecondannotation{8.}
+\gresetfirstannotation{8.}
 \includescore{Hymn/telucisEpiphany}
 
 \goodbreak
@@ -670,7 +671,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{For the Sunday in the octave of the Epiphany. (same tune as Epiphany, different doxology)}
 
-\gresetsecondannotation{8.}
+\gresetfirstannotation{8.}
 \includescore{Hymn/telucisHolyFamily}
 
 \goodbreak
@@ -681,7 +682,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{This tone is used from Ash Wednesday, or Saturday before the first Sunday of Lent to the Friday before Passion Sunday, at the Office of the Sunday and of the feria only.}
 
-\gresetsecondannotation{2.}
+\gresetfirstannotation{2.}
 \includescore{Hymn/telucisLent}
 
 \goodbreak
@@ -691,7 +692,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{This tone is used from the Saturday before Passion Sunday to Wednesday of Holy Week, even on Feats, unless the contrary be indicated.}
 
-\gresetsecondannotation{2.}
+\gresetfirstannotation{2.}
 \includescore{Hymn/telucisPassiontide}
 
 \goodbreak
@@ -703,7 +704,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{The following tone is used from Saturday in Albis (the first Saturday after Easter) to the Tuesday before Ascension.}
 
-\gresetsecondannotation{8.}
+\gresetfirstannotation{8.}
 \includescore{Hymn/telucisEaster}
 
 \goodbreak
@@ -713,7 +714,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{From the night before the Ascension to the Friday before Pentecost.}
 
-\gresetsecondannotation{4.}
+\gresetfirstannotation{4.}
 \includescore{Hymn/telucisAscension}
 
 \goodbreak
@@ -723,7 +724,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{From the night before Pentecost to the Friday before Trinity Sunday.}
 
-\gresetsecondannotation{1.}
+\gresetfirstannotation{1.}
 \includescore{Hymn/telucisPentecost}
 
 %\section{Corpus Christi:}
@@ -748,7 +749,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{Sung from the eve of the feast and throughout the Octave.}
 
-\gresetsecondannotation{3.}
+\gresetfirstannotation{3.}
 \includescore{Hymn/telucisSacredHeart}
 
 \goodbreak
@@ -758,12 +759,12 @@ Doth live and reign eternally. Amen.
 
 \rubrics{This one is the same tune as for Pentecost except with a different doxology. Sung for the Saturday and Sunday.}
 
-\gresetsecondannotation{1.}
+\gresetfirstannotation{1.}
 \includescore{Hymn/telucisChristusRex}
 
 \section{Blessed Virgin Mary}
 
-\gresetsecondannotation{2.}
+\gresetfirstannotation{2.}
 \includescore{Hymn/telucis_bvm}
 
 
@@ -846,10 +847,13 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 
 \bibleref{Solemn tone:}{}
 
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{5.}
 \includescore{MarianAntiphons/almaredemptoris_solemn}
 
 \bibleref{Simple tone:}{}
 
+\gresetfirstannotation{5.}
 \includescore{MarianAntiphons/almaredemptoris}
 
 \begin{verse}
@@ -911,10 +915,13 @@ Thou Virgin first and last, let us thy mercy see.
 
 \bibleref{Solemn tone:}{}
 
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{6.}
 \includescore{MarianAntiphons/averegina_solemn}
 
 \bibleref{Simple tone:}{}
 
+\gresetfirstannotation{6.}
 \includescore{MarianAntiphons/averegina}
 
 \begin{verse}
@@ -959,10 +966,13 @@ Per e\'umdem Christum D\'ominum nostrum.
 
 \bibleref{Solemn tone:}{}
 
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{6.}
 \includescore{MarianAntiphons/reginacaeli_solemn}
 
 \bibleref{Simple tone:}{}
 
+\gresetfirstannotation{6.}
 \includescore{MarianAntiphons/reginacaeli}
 
 \begin{verse}
@@ -1008,10 +1018,13 @@ Through Christ our Lord. Amen.}
 
 \bibleref{Solemn tone:}{}
 
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{1.}
 \includescore{MarianAntiphons/salveregina_solemn}
 
 \bibleref{Simple tone:}{}
 
+\gresetfirstannotation{5.}
 \includescore{MarianAntiphons/salveregina}
 
 \begin{verse}
@@ -1057,6 +1070,69 @@ Per e\'umdem Christum D\'ominum nostrum. \Rbar Amen.}
 
 \appendix
 
+
+\chapter{Sacred Triduum}
+
+\rubrics{On Maundy Thursday, Compline should be celebrated after the altars have been stripped, and on Good Friday at some time after the Solemn Liturgy.  No candles should be lit, and there should be no singing.  On Holy Saturday, Compline is celebrated only by those who have not attended the Vigil.}
+
+\rubrics{Whoever presides should give a sign for the examination of conscience to begin, if this be customary, and the Hour begins simply with the Confiteor, Misereatur and Indulgentiam on a monotone.  The first psalm is simply commenced (Cum invocarem p.~\pageref{sunday}). There are no antiphons, and the Gloria Patri is omitted.  The voice is dropped a whole tone on the last syllable of each verse of the psalms.}
+
+\rubrics{After the three psalms the Canticle Nunc dimittis is recited in the same manner p.~\pageref{canticle}, no antiphons, voice lowered on last syllable.}
+
+\rubrics{On Maundy Thursday, all then kneel and recite together the following: }
+
+\startParallel
+\latin{Christus factus est pro nobis obédiens usque ad mortem.}
+\vern{Christ was made for us obedient unto death.}
+\stopParallel
+
+\rubrics{On Good Friday is said in place of this:}
+
+\startParallel
+\latin{Christus factus est pro nobis obédiens usque ad mortem, mortem autem crucis.}
+\vern{Christ was made for us obedient unto death, death on the cross.}
+\stopParallel
+
+\rubrics{All say the Pater Noster silently}
+
+\rubrics{The Collect is said without Oremus %p.~\pageref{collect} 
+again dropping the voice on the last syllable as in the psalms.}
+
+\startParallel
+\latin{Vísita, quæsumus, Dómine, habitatiónem istam, et omnes insídias inimíci ab ea lónge repélle: \dag\ Ángeli tui sancti hábitent in ea, qui nos in pace custódiant; * et benedíctio tua sit super nos semper.}
+\vern{Visit we beseech thee, O Lord, this dwelling, and drive far from it the snares of the enemy. Let thy holy angels dwell herein to preserve us in peace and let thy blessing be always upon us.}
+\stopParallel
+
+\rubrics{The conclusion \emph{Per Dóminum.} is said silently on Thursday and Friday but aloud on Saturday.}
+
+\rubrics{All then rise and leave in silence.}
+
+\chapter{Easter Octave}
+\label{EasterOctave}
+
+\rubrics{Begin at the beginning p.~\pageref{beginning} through to the Deus in adjutorium.}
+
+\rubrics{Skip the antiphon and go straight into the Psalms for Sunday: Cum invocárem p.~\pageref{sunday}}
+
+\rubrics{Finish with this quadruple Alleluia:}
+
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{8.}
+\includescore{Psalms/octavealleluia}
+
+\rubrics{Then straight into the Canticle without antiphon:}
+
+\includescore{Canticle/easteroctavenunc}
+
+\rubrics{Finish with this antiphon:}
+
+\gresetfirstannotation{Ant.}
+\gresetsecondannotation{2.}
+\includescore{Canticle/an--haec_dies--solesmes}
+
+\rubrics{Then go to the Collect p.~\pageref{collect} with all that follows.}
+
+
 \chapter{Paschal psalmody}
 
 \rubrics{Most of the psalms already use mode 8G, except Wednesday, Friday and Saturday.  The following psalms have the same words, but all set to 8G.}
@@ -1070,7 +1146,7 @@ Per e\'umdem Christum D\'ominum nostrum. \Rbar Amen.}
 
 \psalm{33. I}
 
-\includescore{Psalms/wednesdayeasterpsalm1init.tex}
+\includescore{Psalms/wednesdayeasterpsalm1init}
 
 \setcounter{versecount}{1}
 \startParallel
@@ -1080,7 +1156,7 @@ Per e\'umdem Christum D\'ominum nostrum. \Rbar Amen.}
 
 \psalm{33. II}
 
-\includescore{Psalms/wednesdayeasterpsalm2init.tex}
+\includescore{Psalms/wednesdayeasterpsalm2init}
 
 \setcounter{versecount}{1}
 \startParallel
@@ -1090,7 +1166,7 @@ Per e\'umdem Christum D\'ominum nostrum. \Rbar Amen.}
 
 \psalm{60}
 
-\includescore{Psalms/wednesdayeasterpsalm3init.tex}
+\includescore{Psalms/wednesdayeasterpsalm3init}
 
 \setcounter{versecount}{1}
 \startParallel
@@ -1189,56 +1265,6 @@ Per e\'umdem Christum D\'ominum nostrum. \Rbar Amen.}
 \setcounter{versecount}{0}
 
 
-\chapter{Sacred Triduum}
-
-\rubrics{On Maundy Thursday, Compline should be celebrated after the altars have been stripped, and on Good Friday at some time after the Solemn Liturgy.  No candles should be lit, and there should be no singing.  On Holy Saturday, Compline is celebrated only by those who have not attended the Vigil.}
-
-\rubrics{Whoever presides should give a sign for the examination of conscience to begin, if this be customary, and the Hour begins simply with the Confiteor, Misereatur and Indulgentiam on a monotone.  The first psalm is simply commenced (Cum invocarem p.~\pageref{sunday}). There are no antiphons, and the Gloria Patri is omitted.  The voice is dropped a whole tone on the last syllable of each verse of the psalms.}
-
-\rubrics{After the three psalms the Canticle Nunc dimittis is recited in the same manner p.~\pageref{canticle}, no antiphons, voice lowered on last syllable.}
-
-\rubrics{On Maundy Thursday, all then kneel and recite together the following: }
-
-\startParallel
-\latin{Christus factus est pro nobis obédiens usque ad mortem.}
-\vern{Christ was made for us obedient unto death.}
-\stopParallel
-
-\rubrics{On Good Friday is said in place of this:}
-
-\startParallel
-\latin{Christus factus est pro nobis obédiens usque ad mortem, mortem autem crucis.}
-\vern{Christ was made for us obedient unto death, death on the cross.}
-\stopParallel
-
-\rubrics{All say the Pater Noster silently}
-
-\rubrics{The Collect is said without Oremus p.~\pageref{collect} again dropping the voice on the last syllable as in the psalms.}
-
-\rubrics{The conclusion \emph{Per Dóminum.} is said silently on Thursday and Friday but aloud on Saturday.}
-
-\rubrics{All then rise and leave in silence.}
-
-\chapter{Easter Octave}
-\label{EasterOctave}
-
-\rubrics{Begin at the beginning p.~\pageref{beginning} through to the Deus in adjutorium.}
-
-\rubrics{Skip the antiphon and go straight into the Psalms for Sunday: Cum invocárem p.~\pageref{sunday}}
-
-\rubrics{Finish with this quadruple Alleluia:}
-
-\includescore{Psalms/octavealleluia}
-
-\rubrics{Then straight into the Canticle without antiphon:}
-
-\includescore{Canticle/easteroctavenunc}
-
-\rubrics{Finish with this antiphon:}
-
-\includescore{Canticle/an--haec_dies--solesmes}
-
-\rubrics{Then go to the Collect p.~\pageref{collect} with all that follows.}
 
 
 \chapter{All Souls' Day}
