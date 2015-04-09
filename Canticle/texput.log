@@ -1,0 +1,20 @@
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2015/dev/Debian) (rev 4971)  (format=lualatex 2015.4.8)  8 APR 2015 15:59
+ restricted \write18 enabled.
+**compline
+
+! Emergency stop.
+<*> compline
+         
+End of file on the terminal!
+
+
+
+Here is how much of LuaTeX's memory you used:
+ 4 strings out of 494474
+ 100000,552014 words of node,token memory allocated 182 words of node memory still in use:
+   31 glue_spec nodes
+   avail lists: 2:12,3:1,6:1
+ 3787 multiletter control sequences out of 65536+600000
+ 14 fonts using 403747 bytes
+ 0i,0n,0p,0b,6s stack positions out of 5000i,500n,10000p,200000b,100000s
+!  ==> Fatal error occurred, no output PDF file produced!
