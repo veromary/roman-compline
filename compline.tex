@@ -49,22 +49,22 @@
 %
 %%%%%%%%%%%%%%%%%%%
 
-\def\latin#1{%
-\selectlanguage{latin}
-\ParallelLText{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\ifnum \value{versecount}=0 \strut\fi\selectlanguage{latin}#1\selectlanguage{british}\strut}%
-\selectlanguage{british}%
-\relax %
-}
+%\def\latin#1{%
+%\selectlanguage{latin}
+%\ParallelLText{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\ifnum \value{versecount}=0 \strut\fi\selectlanguage{latin}#1\selectlanguage{british}\strut}%
+%\selectlanguage{british}%
+%\relax %
+%}
 
-\def\vern#1{%
-\ParallelRText{\gretranslationformat{#1}\strut}%
-%\ParallelLText{\ \vspace*{1mm}}\ParallelRText{\ \vspace*{1mm}}%
-\ParallelPar %
-%\kern -1mm%
-\relax %
-}
-\def\startParallel{\begin{Parallel}{\lcolwidth}{\vcolwidth}}
-\def\stopParallel{\end{Parallel}}
+%\def\vern#1{%
+%\ParallelRText{\gretranslationformat{#1}\strut}%
+%%\ParallelLText{\ \vspace*{1mm}}\ParallelRText{\ \vspace*{1mm}}%
+%\ParallelPar %
+%%\kern -1mm%
+%\relax %
+%}
+%\def\startParallel{\begin{Parallel}{\lcolwidth}{\vcolwidth}}
+%\def\stopParallel{\end{Parallel}}
 
 \newcounter{versecount}
 \setcounter{versecount}{0}
@@ -76,13 +76,13 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\def\latin#1{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\selectlanguage{latin}#1\selectlanguage{british}\\}
-%\def\vern#1{{\inglesh \fontsize{14}{11}\selectfont #1}\par}
+\def\latin#1{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\selectlanguage{latin}#1\selectlanguage{british}\\}
+\def\vern#1{{\inglesh \fontsize{14}{11}\selectfont #1}\par}
 
-%\def\startParallel{}
-%\def\stopParallel{}
+\def\startParallel{}
+\def\stopParallel{}
 
-%\setlength{\parskip}{3pt plus 2pt minus 1pt}
+\setlength{\parskip}{3pt plus 2pt minus 1pt}
 
 \def\firstlatin#1#2#3{%
 \latin{%
