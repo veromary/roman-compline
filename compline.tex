@@ -38,7 +38,7 @@
 \newlength{\vcolwidth}
 \setlength{\vcolwidth}{0.43\textwidth}
 
-\renewcommand\gretranslationformat[1]{{\inglesh \fontsize{9}{7}\selectfont #1}}
+\renewcommand\gretranslationformat[1]{{\inglesh \fontsize{9}{11}\selectfont #1}}
 
 \grechangestaffsize{16}
 
@@ -76,8 +76,9 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\latin#1{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\selectlanguage{latin}#1\selectlanguage{british}\\}
-\def\vern#1{{\inglesh \fontsize{9}{7}\selectfont #1}\par}
+\def\latin#1{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\selectlanguage{latin}#1\selectlanguage{british}\strut\par}
+\def\vern#1{\gretranslationformat{#1\par}\par}
+
 
 \def\startParallel{}
 \def\stopParallel{}
@@ -606,7 +607,7 @@ and remission of our sins. \qquad Amen.}
 
 \chapter{The Hymn}
 
-\rubrics{The cantors preintone the first line of the hymn which the velebrandt then intones aloud.  The celebrant's side sing the first verse, then the other side for the second verse then all together for the doxology.}
+\rubrics{The cantors preintone the first line of the hymn which the celebrandt then intones aloud.  The celebrant's side sing the first verse, then the other side for the second verse then all together for the doxology.}
 
 \section*{Sundays and minor feasts:}
 
@@ -637,20 +638,22 @@ Regnans per omne saéculum.\\
 Amen.
 \end{minipage}
 \begin{minipage}[t]{\gcolwidth}
-\inglesh To thee before the close of day,
-Creator of the world, we pray
-That, with thy wonted favour, thou
+\gretranslationformat{To thee before the close of day,\\
+Creator of the world, we pray\\
+That, with thy wonted favour, thou\\
 Wouldst be our guard and keeper now.
 
-From all ill dreams defend our sight,
-From fears and terrors of the night;
-Withhold from us our ghostly foe,
+From all ill dreams defend our sight,\\
+From fears and terrors of the night;\\
+Withhold from us our ghostly foe,\\
 That spot of sin we may not know.
 
-O Father, that we ask be done,
-Through Jesus Christ, thine only Son,
-Who, with the Holy Ghost and thee,
+O Father, that we ask be done,\\
+Through Jesus Christ, thine only Son,\\
+Who, with the Holy Ghost and thee,\\
 Doth live and reign eternally. Amen.
+
+}
 \end{minipage}
 
 \section{Advent:}
@@ -903,13 +906,14 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 \gregorioscore{MarianAntiphons/almaredemptoris}
 
 \begin{verse}
-\inglesh \fontsize{9}{7} \selectfont
-Loving Mother of our Saviour, hear thou thy people’s cry\\
+\gretranslationformat{Loving Mother of our Saviour, hear thou thy people’s cry\\
 Star of the deep and Portal of the sky!\\
 Mother of Him who thee made from nothing made.\\
 Sinking we strive and call to thee for aid:\\
 Oh, by what joy which Gabriel brought to thee,\\
 Thou Virgin first and last, let us thy mercy see.
+
+}
 \end{verse}
 
 \rubrics{In Advent :}
@@ -967,7 +971,7 @@ Thou Virgin first and last, let us thy mercy see.
 \gregorioscore{MarianAntiphons/averegina}
 
 \begin{verse}
-\inglesh \fontsize{9}{7} \selectfont
+\gretranslationformat{
 Hail, Queen of heaven;\\
 Hail, Mistress of the Angels;\\
 Hail, root of Jesse;\\
@@ -976,6 +980,8 @@ Rejoice, Virgin most renowned and of unsurpassed beauty.
 
 Farewell, O most beautiful one,
 and pray for us to Christ.
+
+}
 \end{verse}
 
 \startParallel
@@ -1018,13 +1024,15 @@ Per e\'umdem Christum D\'ominum nostrum.
 \gregorioscore{MarianAntiphons/reginacaeli}
 
 \begin{verse}
-\inglesh \fontsize{9}{7} \selectfont
+\gretranslationformat{
 Queen of heaven, rejoice, alleluia.\\
 For He whom thou didst merit to bear, alleluia,\\
 has risen as he said, alleluia.\\
 Pray to God for us, alleluia.\\
 Rejoice and be glad, O Virgin Mary, alleluia.\\
 For the Lord has truly risen, alleluia.
+
+}
 \end{verse}
 
 \startParallel
@@ -1070,7 +1078,7 @@ Through Christ our Lord. Amen.}
 \gregorioscore{MarianAntiphons/salveregina}
 
 \begin{verse}
-\inglesh \fontsize{9}{7} \selectfont
+\gretranslationformat{
 Hail, holy Queen, Mother of mercy,\\
 hail, our life, our sweetness, and our hope.\\
 To thee do we cry, the children of Eve;\\
@@ -1081,6 +1089,8 @@ thine eyes of mercy toward us;\\
 and after this our exile, show unto us\\
 the blessed fruit of thy womb, Jesus:\\
 O clement, O loving, O sweet Virgin Mary.
+
+}
 \end{verse}
 
 \startParallel
