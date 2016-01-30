@@ -3,16 +3,16 @@
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont[Numbers=OldStyle]{Linux Libertine O}
-%\setmainfont{EB Garamond}
 \newfontfamily{\anavio}{Linux Libertine O}
-%\newfontfamily{\vectis}{Vectis}
-\newfontface{\vectis}{Vectis Bold}
+\newfontfamily{\vectis}{Kingthings Versalis}
+%\newfontfamily{\vectis}{Black Rose}
+%\newfontface{\vectis}{Vectis Bold}
 \newfontface{\versicles}{Versiculum}
 \newfontface{\inglesh}{Linux Biolinum O}
 \usepackage{parallel}
 %\usepackage{lettrine}
 \newfontface{\cruci}{Juuji}
-\usepackage[a]{gregoriotex}
+\usepackage[autocompile]{gregoriotex}
 %\settrimmedsize{9in}{6in}{*}
 \setlength{\trimtop}{0pt}
 \setlength{\trimedge}{0pt}
@@ -38,7 +38,11 @@
 \newlength{\vcolwidth}
 \setlength{\vcolwidth}{0.43\textwidth}
 
-\renewcommand\gretranslationformat[1]{{\inglesh \fontsize{9}{11}\selectfont #1}}
+%\renewcommand\gretranslationformat[1]{{\inglesh \fontsize{9}{11}\selectfont #1}}
+\grechangestyle{translation}{\inglesh \fontsize{9}{11}\selectfont}
+\newcommand\translationfont[1]{{\inglesh \fontsize{9}{11}\selectfont #1}}
+
+\grechangestyle{initial}{\vectis \fontsize{36}{36}\selectfont}
 
 \grechangestaffsize{16}
 
@@ -57,7 +61,7 @@
 %}
 
 %\def\vern#1{%
-%\ParallelRText{\gretranslationformat{#1}\strut}%
+%\ParallelRText{\translationfont{#1}\strut}%
 %%\ParallelLText{\ \vspace*{1mm}}\ParallelRText{\ \vspace*{1mm}}%
 %\ParallelPar %
 %%\kern -1mm%
@@ -77,7 +81,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\latin#1{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\selectlanguage{latin}#1\selectlanguage{british}\strut\par}
-\def\vern#1{\gretranslationformat{#1\par}\par}
+\def\vern#1{\translationfont{#1\par}\par}
 
 
 \def\startParallel{}
@@ -97,7 +101,7 @@
 \def\firstvern#1#2#3{%
 \vern{%
 \noindent\begin{minipage}[t]{\ParallelRWidth}%
-\lettrine{#1}{#2}\gretranslationformat{#3}\strut%\vspace{0.9mm}\vspace{0.13cm}%
+\lettrine{#1}{#2}\translationfont{#3}\strut%\vspace{0.9mm}\vspace{0.13cm}%
 \end{minipage}%
 }%\vspace{-0.2cm}%
 }
@@ -116,63 +120,25 @@
 
 \title{Ad Completorium}
 
-%\chapterstyle{thatcher}
-%\chapterstyle{dowding}
 \chapterstyle{dash}
-
-\grechangedim{maximumspacewithoutdash}{0.00005 cm}{1}%
+\nouppercaseheads
 
 \begin{document}
 
 
-\autocompilegabc
-
-%\showthe\parskip
-%\showthe\pretolerance
-%\showthe\tolerance
-
-%\makeevenhead{myheadings}{\thepage}{}{\leftmark}
-%\makeoddhead{myheadings}{\rightmark}{}{\thepage}
-
-%\createmark{section}{right}{nonumber}{\sectionname}{}
-%\createmark{chapter}{left}{nonumber}{\chaptername}{}
-
-\nouppercaseheads
-\pagestyle{myheadings}
-
-\makeevenhead{myheadings}{\thepage}{\textsc{\leftmark}}{}
-\makeoddhead{myheadings}{}{\textsc{\rightmark}}{\thepage}
-
-\createmark{section}{right}{nonumber}{\sectionname}{}
-\createmark{chapter}{left}{nonumber}{\chaptername}{}
-
 \setcounter{secnumdepth}{0}
-
-%\renewcommand\textbf[1]{%
-%    \pdfliteral direct {2 Tr 0.2 w}%
-%     \oldtextbf{#1}%
-%    \pdfliteral direct {0 Tr 0 w}%
-%}
-%\newcommand\embolden[1]{%
-%    \pdfliteral direct {2 Tr 0.2 w}%
-%     #1%
-%    \pdfliteral direct {0 Tr 0 w}%
-%}
-%\renewcommand\greboldfont[1]{%
-%    \pdfliteral direct {2 Tr 0.2 w}%
-%    \oldtextbf{#1}%
-%    \pdfliteral direct {0 Tr 0 w}%
-%}
 
 \maketitle
 
 \tableofcontents*
+
 
 \chapter{The beginning}
 \label{beginning}
 
 \rubrics{The lector stands in the middle, before the altar.  He turns to the celebrant, bows, and sings:}
 
+\gresetinitiallines0
 \gregorioscore{common/jubedomne}
 
 \rubrics{If the celebrant is a priest, the lector sings \emph{Jube, domne benedicere} or pray father a blessing, instead.}
@@ -187,10 +153,12 @@
 
 \bibleref{Short Lesson.}{1. Peter 5.}
 
+\gresetinitiallines1
 \gregorioscore{common/complineread}
 
 \rubrics{All make the sign of the cross as the celebrant sings:}
 
+\gresetinitiallines0
 \gregorioscore{common/adjutorium}
 
 \gregorioscore{common/quifecit}
@@ -253,8 +221,10 @@ and remission of our sins. \qquad Amen.}
 
 %\bibleref{Ferial Tone.}{}
 
-\gresetfirstlineaboveinitial{\Vbar}{\Vbar}
+\gresetinitiallines1
+\greannotation{\Vbar}
 \gregorioscore{common/deusinadjutorium_ferial}
+
 
 \chapter{The Psalter}
 
@@ -263,20 +233,22 @@ and remission of our sins. \qquad Amen.}
 
 \rubrics{The celebrant intones the antiphon, either \emph{Miserere} most of the year or \emph{Alleluia} during Paschaltide.  The cantor may pre-intone the antiphon for the celebrant according to custom.  All take up the antiphon.  The cantors return to the middle, genuflect, then intone the first verse of the psalm to the asterisk.  They bow to the side of the choir which is to continue the verse (usually the celebrant's side), genuflect, bow to one another, and go their places as all in choir sit, cover with the biretta and proceed with the psalm.}
 
-\grechangedim{annotationseparation}{-1pt}{fixed}
-\grechangedim{annotationraise}{3pt}{fixed}
+\gresetinitiallines1
+%\grechangedim{annotationseparation}{-1pt}{scalable}
+%\grechangedim{annotationraise}{3pt}{scalable}
 \greannotation{\textsc{ant.}}
 \greannotation{8 G}
 \gregorioscore{Psalms/sundayantiphoninit}
-\grechangedim{annotationraise}{0pt}{fixed}
+%\grechangedim{annotationraise}{0pt}{scalable}
 
 \rubrics{P.~T.~stands for Paschal Time.  T.~P.~ stands for Tempore Paschalis.}
 
-\gresetfirstannotation{P. T.}
+\greannotation{P. T.}
 \gregorioscore{Psalms/alleluiapaschaltime}
 
 \psalm{4}
 
+\gresetinitiallines0
 \gregorioscore{Psalms/sundaypsalmsinit1}
 
 \setcounter{versecount}{1}
@@ -302,26 +274,28 @@ and remission of our sins. \qquad Amen.}
 \input Psalms/sundaypsalms3
 \stopParallel
 
+\gresetinitiallines1
 \gregorioscore{Psalms/sundayantiphon}
 
-\gresetfirstannotation{P. T.}
+\greannotation{P. T.}
 \gregorioscore{Psalms/alleluiapaschal}
 
 
 \section{Monday}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{8. G}
+\greannotation{Ant.}
+\greannotation{8. G}
 \gregorioscore{Psalms/mondayinitantiphon}
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschaltime}
 
 \eject
 
 \psalm{6}
 
+\gresetinitiallines0
 \gregorioscore{Psalms/mondaypsalmsinit1}
 
 \setcounter{versecount}{1}
@@ -348,28 +322,30 @@ and remission of our sins. \qquad Amen.}
 \input Psalms/mondaypsalms3
 \stopParallel
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{8. G}
+\gresetinitiallines1
+\greannotation{Ant.}
+\greannotation{8. G}
 \gregorioscore{Psalms/mondayantiphon}
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschal}
 
 \newpage
 
 \section{Tuesday}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{8. G}
+\greannotation{Ant.}
+\greannotation{8. G}
 \gregorioscore{Psalms/tuesdayantiphoninit}
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschaltime}
 
 \psalm{11}
 
+\gresetinitiallines0
 \gregorioscore{Psalms/tuesdaypsalmincipit1}
 
 \setcounter{versecount}{1}
@@ -397,12 +373,13 @@ and remission of our sins. \qquad Amen.}
 \input Psalms/tuesdaypsalms3
 \stopParallel
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{8. G}
+\gresetinitiallines1
+\greannotation{Ant.}
+\greannotation{8. G}
 \gregorioscore{Psalms/tuesdayantiphon}
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschal}
 
 
@@ -412,12 +389,13 @@ and remission of our sins. \qquad Amen.}
 
 \rubrics{for Paschaltide, see p.~\pageref{wed-pt}.}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{3. a}
+\greannotation{Ant.}
+\greannotation{3. a}
 \gregorioscore{Psalms/wednesdayantiphoninit}
 
 \psalm{33. I}
 
+\gresetinitiallines0
 \gregorioscore{Psalms/Wednesdaypsalminit1}
 
 \setcounter{versecount}{1}
@@ -446,23 +424,25 @@ and remission of our sins. \qquad Amen.}
 \input Psalms/wednesdaypsalm3
 \stopParallel
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{3. a}
+\gresetinitiallines1
+\greannotation{Ant.}
+\greannotation{3. a}
 \gregorioscore{Psalms/wednesdayantiphon}
 
 
 \section{Thursday}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{8. G}
+\greannotation{Ant.}
+\greannotation{8. G}
 \gregorioscore{Psalms/thursdayantiphoninit}
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschaltime}
 
 \psalm{69}
 
+\gresetinitiallines0
 \gregorioscore{Psalms/thursdaypsalminit1}
 
 \setcounter{versecount}{1}
@@ -493,12 +473,13 @@ and remission of our sins. \qquad Amen.}
 \stopParallel
 
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{8. G}
+\gresetinitiallines1
+\greannotation{Ant.}
+\greannotation{8. G}
 \gregorioscore{Psalms/thursdayantiphon}
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschal}
 
 
@@ -510,12 +491,13 @@ and remission of our sins. \qquad Amen.}
 
 \rubrics{for Paschaltide, see p.~\pageref{fri-pt}.}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{7. c}
+\greannotation{Ant.}
+\greannotation{7. c}
 \gregorioscore{Psalms/fridayantiphoninit}
 
 \psalm{76. I}
 
+\gresetinitiallines0
 \gregorioscore{Psalms/fridaypsalminit1}
 
 \setcounter{versecount}{1}
@@ -547,8 +529,9 @@ and remission of our sins. \qquad Amen.}
 
 
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{7. c}
+\gresetinitiallines1
+\greannotation{Ant.}
+\greannotation{7. c}
 \gregorioscore{Psalms/fridayantiphon}
 
 
@@ -562,12 +545,13 @@ and remission of our sins. \qquad Amen.}
 
 \rubrics{For Paschaltide see p.~\pageref{sat-pt}.}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{5. a}
+\greannotation{Ant.}
+\greannotation{5. a}
 \gregorioscore{Psalms/saturdayantiphoninit}
 
 \psalm{87}
 
+\gresetinitiallines0
 \gregorioscore{Psalms/saturdaypsalminit1}
 
 \setcounter{versecount}{1}
@@ -596,31 +580,31 @@ and remission of our sins. \qquad Amen.}
 \stopParallel
 
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{5. a}
+\gresetinitiallines1
+\greannotation{Ant.}
+\greannotation{5. a}
 \gregorioscore{Psalms/saturdayantiphon}
 
 \setcounter{versecount}{0}
 
 
-
 \chapter{The Hymn}
 
-\rubrics{The cantors preintone the first line of the hymn which the celebrandt then intones aloud.  The celebrant's side sing the first verse, then the other side for the second verse then all together for the doxology.}
+\rubrics{The cantors preintone the first line of the hymn which the celebrant then intones aloud.  The celebrant's side sing the first verse, then the other side for the second verse then all together for the doxology.}
 
 \section*{Sundays and minor feasts:}
 
-\gresetfirstannotation{8.}
+\greannotation{8.}
 \gregorioscore{Hymn/telucisRegular}
 
 \section*{Feasts:}
 
-\gresetfirstannotation{4.}
+\greannotation{4.}
 \gregorioscore{Hymn/telucisFeasts}
 
 \section*{Ferias:}
 
-\gresetfirstannotation{8.}
+\greannotation{8.}
 \gregorioscore{Hymn/telucisFeria}
 
 \begin{minipage}[t]{\gcolwidth}
@@ -637,7 +621,7 @@ Regnans per omne saéculum.\\
 Amen.
 \end{minipage}
 \begin{minipage}[t]{\gcolwidth}
-\gretranslationformat{To thee before the close of day,\\
+\translationfont{To thee before the close of day,\\
 Creator of the world, we pray\\
 That, with thy wonted favour, thou\\
 Wouldst be our guard and keeper now.
@@ -659,7 +643,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{This Tone is used from the Saturday before the first Sunday of Advent to the night before Christmas Eve, even on Feasts. But on the Feast of the Immaculate Conception and during its Octave, the ordinary Tone for the Feasts of the Blessed Virgin Mary is used, except on the Sunday within the Octave, and on the Octave day itself if this should fall on a Sunday, when the Tone for Advent is used, with the doxology of the Sunday.}
 
-\gresetfirstannotation{2.}
+\greannotation{2.}
 \gregorioscore{Hymn/telucisAdvent}
 
 %\newpage
@@ -669,14 +653,14 @@ Doth live and reign eternally. Amen.
 \label{TLchristmas}
 \rubrics{This Tone (or the following alternative) is used from Christmas Eve to the 4th January, even in the Office of Saints.}
 
-\gresetfirstannotation{8.}
+\greannotation{8.}
 \gregorioscore{Hymn/telucisChristmas}
 
 \subsection{Alternative tune Jesu Redemptor omnium}
 
 \rubrics{This is the tune for the Christmas Vespers hymn.}
 
-\gresetfirstannotation{1.}
+\greannotation{1.}
 \gregorioscore{Hymn/telucisChristmasVespers}
 
 \goodbreak
@@ -685,7 +669,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{From the Eve of the Epiphany on the 5th January to the Octave of the Epiphany and feast of the Circumsion of Our Lord on the 13th January.}
 
-\gresetfirstannotation{8.}
+\greannotation{8.}
 \gregorioscore{Hymn/telucisEpiphany}
 
 \goodbreak
@@ -695,7 +679,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{For the Sunday in the octave of the Epiphany (7-13 February). The same tune is sung as for the Epiphany, but the last verse (also known as the doxology) has a different text.  Formerly many feasts had proper doxologies.}
 
-%\gresetfirstannotation{8.}
+%\greannotation{8.}
 \gregorioscore{Hymn/telucisHolyFamily}
 
 \goodbreak
@@ -706,7 +690,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{This tone is used from Ash Wednesday, or Saturday before the first Sunday of Lent to the Friday before Passion Sunday, at the Office of the Sunday and of the feria only.}
 
-\gresetfirstannotation{2.}
+\greannotation{2.}
 \gregorioscore{Hymn/telucisLent}
 
 \goodbreak
@@ -716,7 +700,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{This tone is used from the Saturday before Passion Sunday to Wednesday of Holy Week, even on Feats, unless the contrary be indicated.}
 
-\gresetfirstannotation{2.}
+\greannotation{2.}
 \gregorioscore{Hymn/telucisPassiontide}
 
 \goodbreak
@@ -728,7 +712,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{The following tone is used from Saturday in Albis (the first Saturday after Easter) to the Tuesday before Ascension.}
 
-\gresetfirstannotation{8.}
+\greannotation{8.}
 \gregorioscore{Hymn/telucisEaster}
 
 \goodbreak
@@ -738,7 +722,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{From the night before the Ascension to the Friday before Pentecost.}
 
-\gresetfirstannotation{4.}
+\greannotation{4.}
 \gregorioscore{Hymn/telucisAscension}
 
 \goodbreak
@@ -748,7 +732,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{From the night before Pentecost to the Friday before Trinity Sunday.}
 
-\gresetfirstannotation{1.}
+\greannotation{1.}
 \gregorioscore{Hymn/telucisPentecost}
 
 %\section{Corpus Christi:}
@@ -773,7 +757,7 @@ Doth live and reign eternally. Amen.
 
 \rubrics{Sung from the eve of the feast and throughout the Octave.}
 
-\gresetfirstannotation{3.}
+\greannotation{3.}
 \gregorioscore{Hymn/telucisSacredHeart}
 
 \goodbreak
@@ -783,12 +767,12 @@ Doth live and reign eternally. Amen.
 
 \rubrics{This one is the same tune as for Pentecost except with a different doxology. Sung for the Saturday and Sunday.}
 
-\gresetfirstannotation{1.}
+\greannotation{1.}
 \gregorioscore{Hymn/telucisChristusRex}
 
 \section{Blessed Virgin Mary}
 
-\gresetfirstannotation{2.}
+\greannotation{2.}
 \gregorioscore{Hymn/telucis_bvm}
 
 
@@ -806,6 +790,7 @@ Doth live and reign eternally. Amen.
 
 \gregorioscore{common/inmanus_duringyear}
 
+\gresetinitiallines0
 \gregorioscore{common/custodi}
 
 \rubrics{During Passiontide the \emph{Glória Patri} in the short responsory is omitted.}
@@ -814,8 +799,10 @@ Doth live and reign eternally. Amen.
 
 \textbf{Short Responsory during Advent.}
 
+\gresetinitiallines1
 \gregorioscore{common/inmanus_advent}
 
+\gresetinitiallines0
 \gregorioscore{common/custodi_advent}
 
 
@@ -823,8 +810,10 @@ Doth live and reign eternally. Amen.
 
 \textbf{Short Responsory during Easter.}
 
+\gresetinitiallines1
 \gregorioscore{common/inmanus_paschal}
 
+\gresetinitiallines0
 \gregorioscore{common/custodi_paschal}
 
 
@@ -833,16 +822,19 @@ Doth live and reign eternally. Amen.
 
 \rubrics{The celebrant intones the \emph{Salve nos}.  The cantors intone the \emph{Nunc dimittis} and bow to the celebrant's side to continue it, genuflect and return to their places}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{3. a.}
+\gresetinitiallines1
+\greannotation{Ant.}
+\greannotation{3. a.}
 \gregorioscore{common/salvanosinit}
 
 \label{canticle}
 \bibleref{Canticle of Simeon.}{Luke 2.}
 
+\gresetinitiallines0
 \gregorioscore{common/nuncdimittis}
 
-\gresetfirstannotation{Ant.}
+\gresetinitiallines1
+\greannotation{Ant.}
 \gregorioscore{common/salvanos}
 
 \section{The Collect}
@@ -885,7 +877,7 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 \vern{Amen.}
 \stopParallel
 
-\rubrics{Then the celebrant intones the Marian Antiphon of the season: \emph{Alma Redemptoris Mater} for Advent and Christmas, p.~\pageref{almaredem}; \emph{Ave Regina Caelorum} for Candlemas to Holy Wednesday, p.~\pageref{averegina}; \emph{Regina Caeli} for Easter, p.~\pageref{reginacaeli} and lastly the \emph{Salve Regina}, p.~\pageref{salveregina}.}
+\rubrics{Then the celebrant intones the Marian Antiphon of the season: \emph{Alma Redemptoris Mater} for Advent and Christmas through to 1st February, p.~\pageref{almaredem}; \emph{Ave Regina Caelorum} for the Purification of Our Lady 2nd February to Holy Wednesday, p.~\pageref{averegina}; \emph{Regina Caeli} for Easter, p.~\pageref{reginacaeli} and lastly the \emph{Salve Regina}, p.~\pageref{salveregina}.}
 
 
 
@@ -895,17 +887,17 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 \label{almaredem}
 \bibleref{Solemn tone:}{}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{5.}
+\greannotation{Ant.}
+\greannotation{5.}
 \gregorioscore{MarianAntiphons/almaredemptoris_solemn}
 
 \bibleref{Simple tone:}{}
 
-\gresetfirstannotation{5.}
+\greannotation{5.}
 \gregorioscore{MarianAntiphons/almaredemptoris}
 
 \begin{verse}
-\gretranslationformat{Loving Mother of our Saviour, hear thou thy people’s cry\\
+\translationfont{Loving Mother of our Saviour, hear thou thy people’s cry\\
 Star of the deep and Portal of the sky!\\
 Mother of Him who thee made from nothing made.\\
 Sinking we strive and call to thee for aid:\\
@@ -933,7 +925,7 @@ Thou Virgin first and last, let us thy mercy see.
 
 \bigskip
 
-\rubrics{From the first Vespers of Christmas onwards :}
+\rubrics{From the 24th December to 1st February :}
 
 \startParallel
 \latin{\Vbar Post partum Virgo inviol\'ata permans\'\i sti.}
@@ -955,22 +947,24 @@ Thou Virgin first and last, let us thy mercy see.
 %\vern{Amen.}
 %\stopParallel
 
-\section{Septuagesima and Lent}
+\section{Lent}
 \label{averegina}
+
+\rubrics{From 2nd February to Holy Wednesday.}
 
 \bibleref{Solemn tone:}{}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{6.}
+\greannotation{Ant.}
+\greannotation{6.}
 \gregorioscore{MarianAntiphons/averegina_solemn}
 
 \bibleref{Simple tone:}{}
 
-\gresetfirstannotation{6.}
+\greannotation{6.}
 \gregorioscore{MarianAntiphons/averegina}
 
 \begin{verse}
-\gretranslationformat{
+\translationfont{
 Hail, Queen of heaven;\\
 Hail, Mistress of the Angels;\\
 Hail, root of Jesse;\\
@@ -1011,19 +1005,21 @@ Per e\'umdem Christum D\'ominum nostrum.
 \section{Paschaltide}
 \label{reginacaeli}
 
+\rubrics{From Easter Sunday to the Saturday after Pentecost.}
+
 \bibleref{Solemn tone:}{}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{6.}
+\greannotation{Ant.}
+\greannotation{6.}
 \gregorioscore{MarianAntiphons/reginacaeli_solemn}
 
 \bibleref{Simple tone:}{}
 
-\gresetfirstannotation{6.}
+\greannotation{6.}
 \gregorioscore{MarianAntiphons/reginacaeli}
 
 \begin{verse}
-\gretranslationformat{
+\translationfont{
 Queen of heaven, rejoice, alleluia.\\
 For He whom thou didst merit to bear, alleluia,\\
 has risen as he said, alleluia.\\
@@ -1065,19 +1061,22 @@ Through Christ our Lord. Amen.}
 
 \section{During the year}
 \label{salveregina}
+
+\rubrics{From Trinity Sunday to the Saturday before the first Sunday of Advent.}
+
 \bibleref{Solemn tone:}{}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{1.}
+\greannotation{Ant.}
+\greannotation{1.}
 \gregorioscore{MarianAntiphons/salveregina_solemn}
 
 \bibleref{Simple tone:}{}
 
-\gresetfirstannotation{5.}
+\greannotation{5.}
 \gregorioscore{MarianAntiphons/salveregina}
 
 \begin{verse}
-\gretranslationformat{
+\translationfont{
 Hail, holy Queen, Mother of mercy,\\
 hail, our life, our sweetness, and our hope.\\
 To thee do we cry, the children of Eve;\\
@@ -1167,8 +1166,9 @@ again dropping the voice on the last syllable as in the psalms.}
 
 \rubrics{Finish with this quadruple Alleluia:}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{8.}
+\gresetinitiallines1
+\greannotation{Ant.}
+\greannotation{8.}
 \gregorioscore{Psalms/octavealleluia}
 
 \rubrics{Then straight into the Canticle without antiphon:}
@@ -1177,8 +1177,8 @@ again dropping the voice on the last syllable as in the psalms.}
 
 %\rubrics{Finish with this antiphon:}
 
-\gresetfirstannotation{Ant.}
-\gresetsecondannotation{2.}
+\greannotation{Ant.}
+\greannotation{2.}
 \gregorioscore{Canticle/an--haec_dies--solesmes}
 
 \rubrics{Then the Collect as usual, with all that follows.}
@@ -1211,13 +1211,14 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 \subsection{Wednesday in Paschal Time}
 \label{wed-pt}
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschaltime}
 
 
 \psalm{33. I}
 
+\gresetinitiallines0
 \gregorioscore{Psalms/wednesdayeasterpsalm1init}
 
 \setcounter{versecount}{1}
@@ -1247,19 +1248,21 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 
 
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschal}
 
 \subsection{Friday in Paschal Time.}
 \label{fri-pt}
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\gresetinitiallines1
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschaltime}
 
 \psalm{76. I}
 
+\gresetinitiallines0
 \gregorioscore{Psalms/fridayeasterps1v1}
 
 \setcounter{versecount}{1}
@@ -1290,19 +1293,21 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 
 
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\gresetinitiallines1
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschal}
 
 \subsection{Saturday in Paschal Time.}
 \label{sat-pt}
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschaltime}
 
 \psalm{87}
 
+\gresetinitiallines0
 \gregorioscore{Psalms/saturdayeasterpsalminit1}
 
 \setcounter{versecount}{1}
@@ -1331,8 +1336,9 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 \stopParallel
 
 
-\gresetfirstannotation{P. T.}
-\gresetsecondannotation{Ant.}
+\gresetinitiallines1
+\greannotation{P. T.}
+\greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschal}
 
 \setcounter{versecount}{0}
@@ -1347,6 +1353,7 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 
 \psalm{122}
 
+\gresetinitiallines0
 \gregorioscore{Psalms/allsouls1v1}
 
 \setcounter{versecount}{1}
