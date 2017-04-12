@@ -1,0 +1,173 @@
+\documentclass[a5paper,12pt,twoside,openany,oldfontcommands]{memoir}
+\usepackage[british,latin]{babel}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont[Numbers=OldStyle]{Linux Libertine O}
+\newfontface{\vectis}{Vectis Bold}
+\newfontfamily{\translationfont}{Linux Biolinum O}
+\newfontface{\versicles}{Versiculum}
+\newfontface{\cruci}{Juuji}
+\setsansfont{Linux Biolinum O}
+
+\usepackage[autocompile]{gregoriotex}
+%\settrimmedsize{9in}{6in}{*}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{0pt}
+%\addtolength{\trimedge}{-\paperwidth}
+\settypeblocksize{170mm}{116mm}{*} % Was 101mm in a5
+\setulmargins{*}{*}{1.4}
+\setlrmargins{*}{*}{1.2}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{.8\onelineskip}{*}
+\checkandfixthelayout
+
+\tolerance=1000
+\pretolerance=800
+
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\parindent}{0pt}
+\setlength{\stanzaskip}{6pt plus 2pt minus 1pt}
+
+\def\latin#1{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\selectlanguage{latin}#1\selectlanguage{british}\strut\par}
+\def\vern#1{\vskip-6pt{\footnotesize \translationfont #1\par}\par}
+
+\newcounter{versecount}
+\setcounter{versecount}{0}
+
+\newcommand{\rubrics}[1]{\begin{center}\textit{#1}\end{center}}
+
+\begin{document}
+
+A last minute attempt at a Sacred Triduum Prime booklet.
+
+\subsection{Psalm 53}
+
+\setcounter{versecount}{1}
+\latin{Deus, in nómine tuo salvum me fac: * et in virtúte tua iúdica me.}
+\vern{Save me, O God, by thy name, * and judge me in thy strength.}
+\latin{Deus, exáudi oratiónem meam: * áuribus pércipe verba oris mei.}
+\vern{O God, hear my prayer: * give ear to the words of my mouth.}
+\latin{Quóniam aliéni insurrexérunt advérsum me, et fortes quæsiérunt ánimam meam: * et non proposuérunt Deum ante conspéctum suum.}
+\vern{For strangers have risen up against me; and the mighty have sought after my soul: * and they have not set God before their eyes.}
+\latin{Ecce enim, Deus ádiuvat me: * et Dóminus suscéptor est ánimæ meæ.}
+\vern{For behold God is my helper: * and the Lord is the protector of my soul.}
+\latin{Avérte mala inimícis meis: * et in veritáte tua dispérde illos.}
+\vern{Turn back the evils upon my enemies; * and cut them off in thy truth.}
+\latin{Voluntárie sacrificábo tibi, * et confitébor nómini tuo, Dómine: quóniam bonum est:}
+\vern{I will freely sacrifice to thee, * and will give praise, O God, to thy name: because it is good:}
+\latin{Quóniam ex omni tribulatióne eripuísti me: * et super inimícos meos despéxit óculus meus.}
+\vern{For thou hast delivered me out of all trouble: * and my eye hath looked down upon my enemies.}
+
+\rubrics{Gloria omittitur}
+
+\subsection{Psalm 118 aleph beth}
+
+\setcounter{versecount}{1}
+\latin{Beáti immaculáti in via: * qui ámbulant in lege Dómini.}
+\vern{(Aleph) Blessed are the undefiled in the way, * who walk in the law of the Lord.}
+\latin{Beáti, qui scrutántur testimónia eius: * in toto corde exquírunt eum.}
+\vern{Blessed are they that search his testimonies: * that seek him with their whole heart.}
+\latin{Non enim qui operántur iniquitátem, * in viis eius ambulavérunt.}
+\vern{For they that work iniquity, * have not walked in his ways.}
+\latin{Tu mandásti * mandáta tua custodíri nimis.}
+\vern{Thou hast commanded * thy commandments to be kept most diligently.}
+\latin{Útinam dirigántur viæ meæ, * ad custodiéndas iustificatiónes tuas!}
+\vern{O! that my ways may be directed * to keep thy justifications.}
+\latin{Tunc non confúndar, * cum perspéxero in ómnibus mandátis tuis.}
+\vern{Then shall I not be confounded, * when I shall look into all thy commandments.}
+\latin{Confitébor tibi in directióne cordis: * in eo quod dídici iudícia iustítiæ tuæ.}
+\vern{I will praise thee with uprightness of heart, * when I shall have learned the judgments of thy justice.}
+\latin{Iustificatiónes tuas custódiam: * non me derelínquas usquequáque.}
+\vern{I will keep thy justifications: * O! do not thou utterly forsake me.}
+\latin{In quo córrigit adolescéntior viam suam? * In custodiéndo sermónes tuos.}
+\vern{(Beth) By what doth a young man correct his way? * By observing thy words.}
+\latin{In toto corde meo exquisívi te: * ne repéllas me a mandátis tuis.}
+\vern{With my whole heart have I sought after thee: * let me not stray from thy commandments.}
+\latin{In corde meo abscóndi elóquia tua: * ut non peccem tibi.}
+\vern{Thy words have I hidden in my heart, * that I may not sin against thee.}
+\latin{Benedíctus es, Dómine: * doce me iustificatiónes tuas.}
+\vern{Blessed art thou, O Lord: * teach me thy justifications.}
+\latin{In lábiis meis, * pronuntiávi ómnia iudícia oris tui.}
+\vern{With my lips * I have pronounced all the judgments of thy mouth.}
+\latin{In via testimoniórum tuórum delectátus sum, * sicut in ómnibus divítiis.}
+\vern{I have been delighted in the way of thy testimonies, * as in all riches.}
+\latin{In mandátis tuis exercébor: * et considerábo vias tuas.}
+\vern{I will meditate on thy commandments: * and I will consider thy ways.}
+\latin{-In iustificatiónibus tuis meditábor: * non oblivíscar sermónes tuos.}
+\vern{I will think of thy justifications: * I will not forget thy words.}
+
+\subsection{Psalm 118 ghimel daleth}
+
+\setcounter{versecount}{1}
+\latin{Retríbue servo tuo, vivífica me: * et custódiam sermónes tuos:}
+\vern{(Ghimel) Give bountifully to thy servant, enliven me * and I shall keep thy words.}
+\latin{Revéla óculos meos: * et considerábo mirabília de lege tua.}
+\vern{Open thou my eyes: * and I will consider the wondrous things of thy law.}
+\latin{Íncola ego sum in terra: * non abscóndas a me mandáta tua.}
+\vern{I am a sojourner on the earth: * hide not thy commandments from me.}
+\latin{Concupívit ánima mea desideráre iustificatiónes tuas, * in omni témpore.}
+\vern{My soul hath coveted to long for thy justifications, * at all times.}
+\latin{Increpásti supérbos: * maledícti qui declínant a mandátis tuis.}
+\vern{Thou hast rebuked the proud: * they are cursed who decline from thy commandments.}
+\latin{Aufer a me oppróbrium, et contémptum: * quia testimónia tua exquisívi.}
+\vern{Remove from me reproach and contempt: * because I have sought after thy testimonies.}
+\latin{Étenim sedérunt príncipes, et advérsum me loquebántur: * servus autem tuus exercebátur in iustificatiónibus tuis.}
+\vern{For princes sat, and spoke against me: * but thy servant was employed in thy justifications.}
+\latin{Nam et testimónia tua meditátio mea est: * et consílium meum iustificatiónes tuæ.}
+\vern{For thy testimonies are my meditation: * and thy justifications my counsel.}
+\latin{Adhæsit paviménto ánima mea: * vivífica me secúndum verbum tuum.}
+\vern{(Daleth) My soul hath cleaved to the pavement: * quicken thou me according to thy word.}
+\latin{Vias meas enuntiávi, et exaudísti me: * doce me iustificatiónes tuas.}
+\vern{I have declared my ways, and thou hast heard me: * teach me thy justifications.}
+\latin{Viam iustificatiónum tuárum ínstrue me: * et exercébor in mirabílibus tuis.}
+\vern{Make me to understand the way of thy justifications: * and I shall be exercised in thy wondrous works.}
+\latin{Dormitávit ánima mea præ tædio: * confírma me in verbis tuis.}
+\vern{My soul hath slumbered through heaviness: * strengthen thou me in thy words.}
+\latin{Viam iniquitátis ámove a me: * et de lege tua miserére mei.}
+\vern{Remove from me the way of iniquity: * and out of thy law have mercy on me.}
+\latin{Viam veritátis elégi: * iudícia tua non sum oblítus.}
+\vern{I have chosen the way of truth: * thy judgments I have not forgotten.}
+\latin{Adhæsi testimóniis tuis, Dómine: * noli me confúndere.}
+\vern{I have stuck to thy testimonies, O Lord: * put me not to shame.}
+\latin{Viam mandatórum tuórum cucúrri, * cum dilatásti cor meum.}
+\vern{I have run the way of thy commandments, * when thou didst enlarge my heart.}
+
+\setcounter{versecount}{0}
+
+\rubrics{On Maundy Thursday, all then kneel and recite together the following: }
+
+\gregorioscore{Canticle/an--christus_factus_est--solesmes}
+
+\latin{Christus factus est pro nobis obédiens usque ad mortem.}
+\vern{Christ was made for us obedient unto death.}
+
+\rubrics{On Good Friday is added:}
+
+\gregorioscore{Canticle/Christusfactus2}
+
+\latin{mortem autem crucis.}
+\vern{death on the cross.}
+
+\rubrics{On Holy Saturday is added:}
+
+\gregorioscore{Canticle/Christusfactus3}
+
+\latin{propter quod et Deus exaltavit illum, et dedit illi nomen, quod est super omne nomen.}
+\vern{therefore God has exalted him, and given him a name that is above all names.}
+
+\rubrics{All say the Pater Noster silently}
+
+\rubrics{The Collect is said without Oremus %p.~\pageref{collect} 
+again dropping the voice on the last syllable as in the psalms.}
+
+\latin{Réspice, quǽsumus, Dómine, super hanc famíliam tuam, pro qua Dóminus noster Iesus Christus non dubitávit mánibus tradi nocéntium, et crucis subíre torméntum:}
+\vern{Look down, we beseech thee, O Lord, on this thy family, for which our Lord Jesus Christ did not hesitate to be delivered up into the hands of wicked men, and to suffer the torment of the Cross.}
+
+\rubrics{finishing silently with:}
+
+\latin{Qui tecum vivit et regnat in unitáte Spíritus Sancti Deus per ómnia sǽcula sæculórum.
+R. Amen.}
+\vern{Who with thee liveth and reigneth, in the unity of the Holy Spirit, one God, world without end. Amen.
+R. Amen.}
+
+\end{document}
