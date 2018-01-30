@@ -43,7 +43,7 @@
 \grechangestyle{translation}{\inglesh \fontsize{9}{11}\selectfont}
 \newcommand\translationfont[1]{{\inglesh \fontsize{9}{11}\selectfont #1}}
 
-\grechangestyle{initial}{\vectis \fontsize{36}{36}\selectfont}
+\grechangestyle{initial}{\vectis \fontsize{32}{32}\selectfont}
 
 \grechangestaffsize{16}
 
@@ -82,7 +82,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\latin#1{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\selectlanguage{latin}#1\selectlanguage{british}\strut\par}
-\def\vern#1{\translationfont{#1\par}\par}
+\def\vern#1{\translationfont{#1\par}\par\pagebreak[3]}
 
 
 \def\startParallel{}
@@ -115,9 +115,9 @@
 \let\oldtextbf\textbf
 
 
-\newcommand\rubrics[1]{\textit{#1}}
-\newcommand\bibleref[2]{\oldtextbf{#1} \hfill \textit{#2}}
-\newcommand\psalm[1]{~ \hfill \oldtextbf{Psalm #1.} \hfill ~}
+\newcommand\rubrics[1]{\emph{#1}}
+\newcommand\bibleref[2]{\smallskip\par\pagebreak[3]\oldtextbf{#1} \hfill \textit{#2}}
+\newcommand\psalm[1]{\bigskip\relax\par\pagebreak[3] ~ \hfill \oldtextbf{Psalm #1.} \hfill ~}
 
 \title{Ad Completorium}
 
@@ -137,12 +137,12 @@
 \chapter{The beginning}
 \label{beginning}
 
-\rubrics{The lector stands in the middle, before the altar.  He turns to the celebrant, bows, and sings:}
+\rubrics{All stand. The lector stands in the middle, before the altar.  He turns to the tabernacle, bows, and sings:}
 
 \gresetinitiallines0
 \gregorioscore{common/jubedomne}
 
-\rubrics{If the celebrant is a priest, the lector sings \emph{Jube, domne benedicere} or pray father a blessing, instead.}
+\rubrics{[If the celebrant is a priest, the lector sings \emph{Jube, domne benedicere} and bows to the priest, asking his blessing.]}
 
 \rubrics{The celebrant intones the blessing:}
 
@@ -150,7 +150,7 @@
 
 \eject
 
-\rubrics{The lector rises, and, facing the altar, sings the short lesson:}
+\rubrics{The lector rises, and, facing the altar, sings the short lesson, genuflacting at the words \emph{Tu autem\ldots }:}
 
 \bibleref{Short Lesson.}{1. Peter 5.}
 
@@ -291,6 +291,8 @@ and remission of our sins. Amen.}
 \greannotation{P. T.}
 \greannotation{Ant.}
 \gregorioscore{Psalms/alleluiapaschalinit}
+
+\bigskip
 
 \psalm{6}
 
@@ -870,7 +872,15 @@ Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in th
 
 \rubrics{Then the celebrant intones the Marian Antiphon of the season: \emph{Alma Redemptoris Mater} for Advent and Christmas through to 1st February, p.~\pageref{almaredem}; \emph{Ave Regina Caelorum} for the Purification of Our Lady 2nd February to Holy Wednesday, p.~\pageref{averegina}; \emph{Regina Caeli} for Easter, p.~\pageref{reginacaeli} and lastly the \emph{Salve Regina}, p.~\pageref{salveregina}.}
 
+\rubrics{Outside of Eastertide, on Monday--Friday, without exception even for greater feasts, all, except the Officiant, now kneel for the Final Marian Antiphon. On Saturday and Sunday nights, all continue standing. During Eastertide, all stand every night for the \emph{Regina coeli}. The Officiant stands and intones the applicable Marian Antiphon according to the Season, after which, he also kneels if it be Monday--Friday outside of Eastertide. All continue singing the Marian Antiphon straight through with no alternations.}
 
+
+
+Each Marian Antiphon has a Solemn Tone and a Simple Tone. The Solemn Tone is sung on all Saturday and Sunday nights, on all First and Second Class Feasts (when the Office is of the Feast), and on each night during the Octaves of Christmas and Pentecost. The Simple Tone is sung on all other days inclusive of all Ferial Days of any rank (e.g. Ash Wednesday, weekdays of Holy Week).
+
+After the Marian antiphon is finished, the Cantor says the applicable versicle and all make the corresponding the response. Then the Officiant alone stands and says the prayer to which all respond \emph{Amen}.
+
+All making the Sign of the Cross, the Officiant says in low, recto tono voice, the \emph{Divinum auxilium\ldots} and respond \emph{Amen.} Thus ends Compline according to the normal arrangement of the 1962 Breviarium Romanum.
 
 \chapter{The Marian Antiphon}
 
