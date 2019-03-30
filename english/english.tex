@@ -1,0 +1,95 @@
+\documentclass[a5paper,12pt,twoside,openany,oldfontcommands]{memoir}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont[Numbers=OldStyle]{Linux Libertine O}
+%\setmainfont[BoldFont={Mezalia Extra Bold},
+%             ItalicFont={Mezalia Cursive}]{Mezalia Regular}
+\newfontfamily{\anavio}{Linux Libertine O}
+%\newfontfamily{\vectis}{Mezalia Initials}
+\newfontfamily{\vectis}{Kingthings Versalis}
+%\newfontface{\vectis}{Vectis Bold}
+\newfontface{\versicles}{Versiculum}
+%\newfontface{\inglesh}{Mezalia Sans}
+\newfontface{\inglesh}{Linux Biolinum O}
+\usepackage{parallel}
+%\usepackage{lettrine}
+\newfontface{\cruci}{Juuji}
+\usepackage[autocompile]{gregoriotex}
+%\usepackage{canoniclayout}
+%\settrimmedsize{9in}{6in}{*}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{0pt}
+%\addtolength{\trimedge}{-\paperwidth}
+\settypeblocksize{170mm}{110mm}{*} % Was 101mm in a5
+\setulmargins{*}{*}{1.4}
+\setlrmargins{*}{*}{1.2}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{.8\onelineskip}{*}
+\checkandfixthelayout
+
+\tolerance=1000
+\pretolerance=800
+
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\parindent}{0pt}
+\setlength{\stanzaskip}{6pt plus 2pt minus 1pt}
+
+\newlength{\gcolwidth}
+\setlength{\gcolwidth}{0.48\textwidth}
+\newlength{\lcolwidth}
+\setlength{\lcolwidth}{0.53\textwidth}
+\newlength{\vcolwidth}
+\setlength{\vcolwidth}{0.43\textwidth}
+
+%\grechangestyle{translation}{\inglesh \fontsize{9}{11}\selectfont}
+%\newcommand\translationfont[1]{{\inglesh \fontsize{9}{11}\selectfont #1}}
+
+\grechangestyle{initial}{\vectis \fontsize{32}{32}\selectfont}
+
+\grechangestaffsize{16}
+
+
+\newcounter{versecount}
+\setcounter{versecount}{0}
+
+\setlength{\parskip}{3pt plus 2pt minus 1pt}
+
+\newcommand\maltese{{\tiny \cruci V}\ }
+
+\renewcommand\Vbar{\makebox[1em][l]{\versicles v}}
+\renewcommand\Rbar{\makebox[1em][l]{\versicles r}}
+
+
+
+\newcommand\rubrics[1]{\emph{#1}}
+\newcommand\bibleref[2]{\smallskip\par\pagebreak[3]\textbf{#1} \hfill \textit{#2}}
+\newcommand\psalm[1]{\bigskip\relax\par\pagebreak[3] ~ \hfill \textbf{Psalm #1.} \hfill ~}
+
+\title{Compline}
+
+\chapterstyle{dash}
+\nouppercaseheads
+
+\begin{document}
+
+
+
+\setcounter{secnumdepth}{0}
+
+\maketitle
+
+\tableofcontents*
+
+
+
+\gregorioscore{gabc/ogodcome}
+
+Here an examination of conscience is commended. In a common celebration this may be inserted in a penitential act using the formulas given in the Missal.
+
+\grecommentary{(Confiteor)}
+\gresetinitiallines{0}
+\gregorioscore{gabc/iconfess}
+
+
+\end{document}
+
