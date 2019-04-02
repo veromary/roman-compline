@@ -1,0 +1,364 @@
+\documentclass[a5paper,12pt,twoside,openany,oldfontcommands]{memoir}
+\usepackage[british,latin]{babel}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+%\setmainfont[Numbers=OldStyle]{Linux Libertine O}
+\setmainfont[BoldFont={Mezalia Extra Bold},
+            ItalicFont={Mezalia Cursive}]{Mezalia Regular}
+\newfontfamily{\anavio}{Linux Libertine O}
+\newfontfamily{\vectis}{Mezalia Initials}
+%\newfontfamily{\vectis}{Kingthings Versalis}
+%\newfontface{\vectis}{Vectis Bold}
+\newfontface{\versicles}{Versiculum}
+\newfontface{\inglesh}{Mezalia Sans}
+%\newfontface{\inglesh}{Linux Biolinum O}
+\usepackage{parallel}
+%\usepackage{lettrine}
+\newfontface{\cruci}{Juuji}
+\usepackage[autocompile]{gregoriotex}
+%\usepackage{canoniclayout}
+%\settrimmedsize{9in}{6in}{*}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{0pt}
+%\addtolength{\trimedge}{-\paperwidth}
+\settypeblocksize{170mm}{110mm}{*} % Was 101mm in a5
+\setulmargins{*}{*}{1.4}
+\setlrmargins{*}{*}{1.2}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{.8\onelineskip}{*}
+\checkandfixthelayout
+
+\tolerance=1000
+\pretolerance=800
+
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\parindent}{0pt}
+\setlength{\stanzaskip}{6pt plus 2pt minus 1pt}
+
+\newlength{\gcolwidth}
+\setlength{\gcolwidth}{0.48\textwidth}
+\newlength{\lcolwidth}
+\setlength{\lcolwidth}{0.53\textwidth}
+\newlength{\vcolwidth}
+\setlength{\vcolwidth}{0.43\textwidth}
+
+%\renewcommand\gretranslationformat[1]{{\inglesh \fontsize{9}{11}\selectfont #1}}
+\grechangestyle{translation}{\inglesh \fontsize{9}{11}\selectfont}
+\newcommand\translationfont[1]{{\inglesh \fontsize{9}{11}\selectfont #1}}
+
+\grechangestyle{initial}{\vectis \fontsize{32}{32}\selectfont}
+
+\grechangestaffsize{16}
+
+
+%%%%%%%%%%%%%%%%%%%
+%
+% Parallel columns
+%
+%%%%%%%%%%%%%%%%%%%
+
+%\def\latin#1{%
+%\selectlanguage{latin}
+%\ParallelLText{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\ifnum \value{versecount}=0 \strut\fi\selectlanguage{latin}#1\selectlanguage{british}\strut}%
+%\selectlanguage{british}%
+%\relax %
+%}
+
+%\def\vern#1{%
+%\ParallelRText{\translationfont{#1}\strut}%
+%%\ParallelLText{\ \vspace*{1mm}}\ParallelRText{\ \vspace*{1mm}}%
+%\ParallelPar %
+%%\kern -1mm%
+%\relax %
+%}
+%\def\startParallel{\begin{Parallel}{\lcolwidth}{\vcolwidth}}
+%\def\stopParallel{\end{Parallel}}
+
+\newcounter{versecount}
+\setcounter{versecount}{0}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Interlinear translation code:
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\latin#1{\ifnum \value{versecount}>0 \stepcounter{versecount} \theversecount .~\fi\selectlanguage{latin}#1\selectlanguage{british}\strut\par}
+\def\vern#1{\translationfont{#1\par}\par\pagebreak[3]}
+
+
+\def\startParallel{}
+\def\stopParallel{}
+
+\setlength{\parskip}{3pt plus 2pt minus 1pt}
+
+\def\firstlatin#1#2#3{%
+\latin{%
+\noindent\begin{minipage}[t]{\ParallelLWidth}%
+\lettrine{#1}{#2}#3\strut%\vspace{0.9mm}\vspace{0.13cm}%
+\end{minipage}%
+}%
+%\vspace{-0.2cm}%
+}
+
+\def\firstvern#1#2#3{%
+\vern{%
+\noindent\begin{minipage}[t]{\ParallelRWidth}%
+\lettrine{#1}{#2}\translationfont{#3}\strut%\vspace{0.9mm}\vspace{0.13cm}%
+\end{minipage}%
+}%\vspace{-0.2cm}%
+}
+
+\newcommand\maltese{{\tiny \cruci V}\ }
+
+\renewcommand\Vbar{\makebox[1em][l]{\versicles v}}
+\renewcommand\Rbar{\makebox[1em][l]{\versicles r}}
+
+
+
+\newcommand\rubrics[1]{\emph{#1}}
+\newcommand\bibleref[2]{\smallskip\par\pagebreak[3]\textbf{#1} \hfill \textit{#2}}
+\newcommand\psalm[1]{\bigskip\relax\par\pagebreak[3] ~ \hfill \textbf{Psalm #1.} \hfill ~}
+
+\title{Ad Completorium}
+
+\chapterstyle{dash}
+\nouppercaseheads
+
+\begin{document}
+
+
+\setcounter{secnumdepth}{0}
+
+\maketitle
+
+\tableofcontents*
+
+
+\chapter{The beginning}
+\label{beginning}
+
+\rubrics{All stand. The lector stands in the middle, before the altar.  He turns to the tabernacle, bows, and sings:}
+
+\gresetinitiallines0
+\gregorioscore{common/jubedomne}
+
+\rubrics{[If the celebrant is a priest, the lector sings \emph{Jube, domne benedicere} and bows to the priest, asking his blessing.]}
+
+\rubrics{The celebrant intones the blessing:}
+
+\gregorioscore{common/noctem}
+
+\eject
+
+\rubrics{The lector rises, and, facing the altar, sings the short lesson, genuflacting at the words \emph{Tu autem\ldots }:}
+
+\bibleref{Short Lesson.}{1. Peter 5.}
+
+\gresetinitiallines1
+\gregorioscore{common/complineread}
+
+\rubrics{All make the sign of the cross as the celebrant sings:}
+
+\gresetinitiallines0
+\gregorioscore{common/adjutorium}
+
+\gregorioscore{common/quifecit}
+
+\rubrics{\emph{Pater noster.} altogether in silence.}
+
+\rubrics{Then, if the celebrant is a priest, he says the \emph{Confiteor} entirely recto tono, in a low voice.  The Choir replies with \emph{Misereátur tui.}}
+
+\rubrics{If there is no priest present all recite the \emph{Confiteor} as follows:}
+
+\startParallel
+\latin{Confiteor Deo omnipoténti, %\parfillskip0pt 
+beát\ae\ Marí\ae\ semper Vírgini, beáto
+Michaéli Archángelo, beáto Joánni Baptíst\ae, sanctis Apóstolis Petro
+et Paulo, et ómnibus Sanctis, [\textit{(if a priest presides)} et tibi, Pater:] quia peccávi nimis cogitatióne,
+verbo et ópere: \textit{(strike breast three times)} \textbf{mea
+culpa, mea culpa, mea máxima culpa.} Ideo precor beátam Maríam semper
+Vírginem, beátum Michaélem Archángelum, beátum Joánnem Baptístam,
+sanctos Apóstolos Petrum et Paulum, et omnes Sanctos, [\textit{(if a priest presides)} et te, Pater,] oráre
+pro me ad Dóminum Deum nostrum.}
+\vern{I confess to Almighty God, to blessed Mary %\parfillskip0pt 
+ever Virgin, to blessed Michael the Arch\-angel, to blessed John the
+Baptist, to the holy Apostles Peter and Paul, to all the Saints, [and
+to you, Father,] that I have sinned exceedingly, in thought, word,
+and deed: \textit{(strike breast three times)} through my fault,
+through my fault, through my most grievous fault. Therefore I beseech
+blessed Mary ever Virgin, blessed Michael the Arch\-angel, blessed John
+the Baptist, the holy Apostles Peter and Paul, all the Saints, [and
+you, Father,] to pray for me to the Lord our God.}
+%\latin{}
+%\vern{}
+\stopParallel
+\smallskip
+\rubrics{The celebrant next says:}
+\startParallel
+\latin{Misereátur nostri omnípotens Deus, et dimíssis peccátis
+nostris, perdúcat nos ad vitam \ae térnam. \Rbar Amen.}
+\vern{May Almighty God have mercy upon you, forgive you your sins, and
+bring you to life everlasting. Amen.}
+
+%\latin{\Rbar Amen.}
+%\vern{Amen.}
+
+
+\latin{Indulgéntiam, \maltese absolutiónem, et remissiónem peccatórum
+nostrórum, tríbuat nobis omnípotens et miséricors Dóminus. \Rbar Amen.}
+\vern{May the Almighty and merciful Lord grant us pardon, \maltese absolution,
+and remission of our sins. Amen.}
+
+%\latin{\Rbar Amen.}
+%\vern{Amen.}
+
+\stopParallel
+
+%\eject
+
+\rubrics{The celebrant then sings:}
+
+\gregorioscore{common/converte}
+
+%\bibleref{Ferial Tone.}{}
+
+\gresetinitiallines1
+\greannotation{\Vbar}
+\gregorioscore{common/deusinadjutorium_ferial}
+
+\chapter{Psalmody}
+
+\rubrics{The cantors genuflect, then intone the first verse of the psalm to the asterisk.  They bow to the side of the choir which is to continue the verse (usually the celebrant's side), genuflect, bow to one another, and go their places as all in choir sit, cover with the biretta and proceed with the psalm.}
+
+\psalm{4}
+
+\gresetinitiallines0
+\gregorioscore{Psalms/sundaypsalmsinit1}
+
+\setcounter{versecount}{1}
+\startParallel
+\input Psalms/sundaypsalms1
+\stopParallel
+
+\psalm{90}
+
+\setcounter{versecount}{1}
+\gregorioscore{Psalms/sundaypsalmsinit2}
+
+\startParallel
+\input Psalms/sundaypsalms2
+\stopParallel
+
+\psalm{133}
+
+\gregorioscore{Psalms/sundaypsalmsinit3}
+
+\setcounter{versecount}{1}
+\startParallel
+\input Psalms/sundaypsalms3
+\stopParallel
+
+\gresetinitiallines1
+\greannotation{Ant.}
+\greannotation{8.}
+\gregorioscore{Psalms/octavealleluia}
+
+\setcounter{versecount}{0}
+
+\rubrics{Then straight into the Canticle:}
+
+\chapter{The Canticle}
+
+\gregorioscore{Canticle/easteroctavenunc}
+
+\rubrics{Finishing with the Easter antiphon \emph{Haec dies}:}
+
+\greannotation{Ant.}
+\greannotation{2.}
+\gregorioscore{Canticle/an--haec_dies--solesmes}
+
+%\rubrics{Then the Collect as usual, with all that follows.}
+
+\chapter{The Collect}
+
+\startParallel
+\latin{\Vbar Dómine, exaudi oratiónem meam.}
+\vern{O Lord, hear my prayer.}
+\latin{\Rbar Et clamor meus ad te véniat.}
+\vern{And let my cry come unto Thee.}
+\latin{Orémus. Vísita, quæsumus, Dómine, habitatiónem istam, et omnes insídias inimíci ab ea lónge repélle: \dag\ Ángeli tui sancti hábitent in ea, qui nos in pace custódiant; * et benedíctio tua sit super nos semper.
+Per Dóminum nostrum Jesum Christum, Filium tuum: \dag\ qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, * per ómnia saécula sæculórum. \Rbar Amen.}
+\vern{Let us pray. Visit we beseech thee, O Lord, this dwelling, and drive far from it the snares of the enemy. Let thy holy angels dwell herein to preserve us in peace and let thy blessing be always upon us.
+Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.}
+\latin{\Vbar Dómine, exaudi oratiónem meam.}
+\vern{O Lord, hear my prayer.}
+\latin{\Rbar Et clamor meus ad te véniat.}
+\vern{And let my cry come unto Thee.}
+\latin{\Vbar Benedicámus Dómino. \Rbar Deo grátias.}
+\vern{Let us bless the Lord. Thanks be to God.}
+\latin{Benedícat et custódiat nos omnípotens et miséricors Dóminus, \maltese Pater, et Fílius, et Spíritus Sanctus. \Rbar Amen.}
+\vern{The almighty and merciful Lord the Father, the Son and the Holy Spirit bless us and keep us. Amen.}
+\stopParallel
+
+
+\chapter{Marian Antiphon}
+
+\rubrics{From Easter Sunday to the Saturday after Pentecost.}
+
+\bibleref{Solemn tone:}{}
+
+\greannotation{Ant.}
+\greannotation{6.}
+\gregorioscore{MarianAntiphons/reginacaeli_solemn}
+
+\bibleref{Simple tone:}{}
+
+\greannotation{6.}
+\gregorioscore{MarianAntiphons/reginacaeli}
+
+\begin{verse}
+\translationfont{
+Queen of heaven, rejoice, alleluia.\\
+For He whom thou didst merit to bear, alleluia,\\
+has risen as he said, alleluia.\\
+Pray to God for us, alleluia.\\
+Rejoice and be glad, O Virgin Mary, alleluia.\\
+For the Lord has truly risen, alleluia.
+
+}
+\end{verse}
+
+\startParallel
+\latin{\Vbar Gaude et l\ae t\'are Virgo Mar\'\i a, allel\'uia.}
+\vern{Rejoice and be glad O Virgin Mary, alleluia.}
+\latin{\Rbar Quia surr\'exit D\'ominus vere, allel\'uia.}
+\vern{For the Lord has risen indeed, alleluia.}
+\latin{Or\'emus.}
+\vern{Let us pray.}
+\latin{Deus, qui per resurrecti\'onem F\'\i lii tui D\'omini
+ nostri Jesu Christi mundum l\ae tific\'are dignatus es : \dag \ 
+pr\ae sta, qu\ae sumus; ut per ejus Genitr\'\i cem 
+V\'\i rginem Mar\'\i am, * perp\'etu\ae \ cap\'\i amus
+ g\'audia vit\ae . Per e\'umdem Christum D\'ominum nostrum. \Rbar Amen.}
+\vern{O God, who through the resurrection of Thy Son our Lord Jesus Christ
+didst vouchsafe to give joy to the world:
+grant, we beseech thee, that through His Mother, the Virgin Mary,
+we may obtain the joys of everlasting life.
+Through Christ our Lord. Amen.}
+\latin{\Vbar Divínum auxílium máneat semper nobíscum. \Rbar Amen.}
+\vern{May the divine assistance remain always with us. Amen.}
+\stopParallel
+
+%\startParallel
+%\latin{\Vbar Divínum auxílium máneat semper nobíscum.}
+%\vern{May the divine assistance remain always with us.}
+%\latin{\Rbar Amen.}
+%\vern{Amen.}
+%\stopParallel
+
+
+
+
+\end{document}
