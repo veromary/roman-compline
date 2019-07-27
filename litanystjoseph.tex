@@ -1,8 +1,10 @@
-\documentclass[a5paper,10pt]{memoir}
+\documentclass[a5paper,10pt,oneside]{memoir}
 \usepackage{libertine}
 \usepackage[autocompile]{gregoriotex}
 \usepackage[savepos]{zref}
 \usepackage{multicol}
+\setulmarginsandblock{.625in}{1.25in}{*}
+\checkandfixthelayout
 
 \columnseprule=0.4pt
 
@@ -57,6 +59,8 @@
 \gresetinitiallines{0}
 \gresetlastline{justified}
 
+
+\gresetlastline{justified}
 \gregorioscore{josephgabc/litany1}
 \begin{nstabbing}
 	\>Fi-\>li \>Redémptor mun\>\>\textit{di} \>\textbf{De-}\>us, \>mi-\>se-\>ré-\>re \>no-\>bis.\\
@@ -71,12 +75,12 @@
 	\>Lumen Patri-\>\textit{ar-}\>\>\textbf{\llap{c}há-}\>rum, \>o-\>ra \>pro \>nobis.\\
 \end{nstabbing}
 
-%\begin{multicols}{2}
-%Dei Genitrí-\textit{cis} \textbf{spon}se,\\
-%Custos pudí-\textit{ce} \textbf{Vírgi-}nis,\\
-%Fílii Dei \textit{nu-}\textbf{tríci-}e,\\
-%Christi defén-\textit{sor} \textbf{sédu-}le,\\
-%Almae Famíli-\textit{ae} \textbf{prae-}ses,\\
+\begin{multicols}{2}
+\noindent Dei Genitrí-\textit{cis} \textbf{spon}se,\\
+Custos pudí-\textit{ce} \textbf{Vírgi-}nis,\\
+Fílii Dei \textit{nu-}\textbf{tríci-}e,\\
+Christi defén-\textit{sor} \textbf{sédu-}le,\\
+Almae Famíli-\textit{ae} \textbf{prae-}ses,\\
 Joseph \textit{ju-}\textbf{stíssi-}me,\\
 Joseph \textit{ca-}\textbf{stíssi-}me,\\
 Joseph pru-\textit{den-}\textbf{tíssi-}me,\\
@@ -84,17 +88,17 @@ Joseph \textit{for-}\textbf{tíssi-}me,\\
 Joseph obedi-\textit{en-}\textbf{tíssi-}me,\\
 Joseph fi-\textit{de-}\textbf{líssi-}me,\\
 Spéculum pa-\textit{ti-}\textbf{énti-}ae,\\
-%Amátor pau-\textit{per-}\textbf{tá-}tis,\\
-%Exémplar \textit{o-}\textbf{pífi-}cum,\\
-%Domésticae vi-\textit{ae} \textbf{de-}cus,\\
-%Cu-\textit{stos} \textbf{vírgi-}num,\\
-%Familiá-\textit{rum} \textbf{cólu-}men,\\
-%Solátium mi-\textit{se-}\textbf{ró-}rum,\\
+Amátor pau-\textit{per-}\textbf{tá-}tis,\\
+Exémplar \textit{o-}\textbf{pífi-}cum,\\
+Domésticae vi-\textit{ae} \textbf{de-}cus,\\
+Cu-\textit{stos} \textbf{vírgi-}num,\\
+Familiá-\textit{rum} \textbf{cólu-}men,\\
+Solátium mi-\textit{se-}\textbf{ró-}rum,\\
 Spes ae-\textit{gro-}\textbf{tánti-}um,\\
 Patróne mo-\textit{ri-}\textbf{énti-}um,\\
 Ter-\textit{ror} \textbf{daémo-}num,\\
 Protéctor sanctae \textit{Ec-}\textbf{clési-}ae,
-%\end{multicols}
+\end{multicols}
 
 \gregorioscore{josephgabc/litany3}
 \begin{nstabbing}
@@ -108,5 +112,15 @@ Protéctor sanctae \textit{Ec-}\textbf{clési-}ae,
 	\>Dómine.\\
 	\>\>nobis.\\
 \end{nstabbing}
+
+V. Constítuit eum dóminum domus suae.
+
+R. Et príncipem omnis possessiónis suae.
+
+Orémus.
+
+\begin{multicols}{2}
+	Deus, qui ineffábili providéntia beátum Joseph sanctíssimae Genitrícis tuae sponsum elígere dignátus es : \dag\ praesta, quaésumus; ut quem protectórem veneraámur in terris, * intercessórem habére mereámur in caelis : Qui vivis et regnas in saécula saeculórum. Amen.
+\end{multicols}
 
 \end{document}
