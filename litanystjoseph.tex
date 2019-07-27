@@ -1,0 +1,112 @@
+\documentclass[a5paper,10pt]{memoir}
+\usepackage{libertine}
+\usepackage[autocompile]{gregoriotex}
+\usepackage[savepos]{zref}
+\usepackage{multicol}
+
+\columnseprule=0.4pt
+
+\makeatletter  
+\newcounter{score}
+\newcounter{tabstop}[score]
+\newcommand{\grealign}{%
+	\@bsphack%
+	\ifgre@boxing\else%
+		\kern\gre@dimen@begindifference%
+		\stepcounter{tabstop}%
+		\expandafter\zsavepos{stop-\thescore-\thetabstop}%
+		\kern-\gre@dimen@begindifference%
+	\fi%
+	\@esphack%
+}
+
+\newcommand{\setstops}{%
+  \gdef\nstabbing@stops{%
+    \hspace*{-\oddsidemargin}\hspace{-1in}%
+    \hspace*{\zposx{stop-\thescore-1} sp}\=%
+  }%
+  \count@=\@ne
+  \loop\ifnum\count@<\value{tabstop}%
+    \begingroup\edef\x{\endgroup
+      \noexpand\g@addto@macro\noexpand\nstabbing@stops{%
+        \noexpand\hspace{-\noexpand\zposx{stop-\thescore-\the\count@} sp}%
+        \noexpand\hspace{\noexpand\zposx{stop-\thescore-\the\numexpr\count@+1} sp}\noexpand\=%
+      }%
+    }\x
+    \advance\count@\@ne
+  \repeat
+  \nstabbing@stops\kill
+}
+\makeatother
+
+\newenvironment{nstabbing}
+  {\setlength{\topsep}{0pt}%
+   \setlength{\partopsep}{0pt}%
+   \tabbing%
+   \setstops}
+  {\endtabbing\stepcounter{score}}
+
+\begin{document}
+
+\begin{center}
+	{\LARGE \bfseries \scshape Litany of St Joseph}
+\end{center}
+
+\gregorioscore{josephgabc/kyrie}
+
+\gresetinitiallines{0}
+\gresetlastline{justified}
+
+\gregorioscore{josephgabc/litany1}
+\begin{nstabbing}
+	\>Fi-\>li \>Redémptor mun\>\>\textit{di} \>\textbf{De-}\>us, \>mi-\>se-\>ré-\>re \>no-\>bis.\\
+	\>Spí-\>ri-\>tus \>San\textit{cte} \>\>\textbf{De-}\>us, \>mi-\>se-\>ré-\>re \>no-\>bis.\\
+	\>Sancta \>\>Trínitas \>un-\>\textit{us} \>\textbf{De-}\>us, \>mi-\>se-\>ré-\>re \>no-\>bis.\\
+\end{nstabbing}
+
+\gregorioscore{josephgabc/litany2}
+\begin{nstabbing}
+	\>San-\>\textit{cte} \>\>\textbf{Jo}\>seph, \>o-\>ra \>pro \>nobis.\\
+	\>Proles, Da- \>\textit{vid} \>\textbf{\llap{í}n-}\>\textbf{\llap{c}ly-}\>ta, \>o-\>ra \>pro \>nobis.\\
+	\>Lumen Patri-\>\textit{ar-}\>\>\textbf{\llap{c}há-}\>rum, \>o-\>ra \>pro \>nobis.\\
+\end{nstabbing}
+
+%\begin{multicols}{2}
+%Dei Genitrí-\textit{cis} \textbf{spon}se,\\
+%Custos pudí-\textit{ce} \textbf{Vírgi-}nis,\\
+%Fílii Dei \textit{nu-}\textbf{tríci-}e,\\
+%Christi defén-\textit{sor} \textbf{sédu-}le,\\
+%Almae Famíli-\textit{ae} \textbf{prae-}ses,\\
+Joseph \textit{ju-}\textbf{stíssi-}me,\\
+Joseph \textit{ca-}\textbf{stíssi-}me,\\
+Joseph pru-\textit{den-}\textbf{tíssi-}me,\\
+Joseph \textit{for-}\textbf{tíssi-}me,\\
+Joseph obedi-\textit{en-}\textbf{tíssi-}me,\\
+Joseph fi-\textit{de-}\textbf{líssi-}me,\\
+Spéculum pa-\textit{ti-}\textbf{énti-}ae,\\
+%Amátor pau-\textit{per-}\textbf{tá-}tis,\\
+%Exémplar \textit{o-}\textbf{pífi-}cum,\\
+%Domésticae vi-\textit{ae} \textbf{de-}cus,\\
+%Cu-\textit{stos} \textbf{vírgi-}num,\\
+%Familiá-\textit{rum} \textbf{cólu-}men,\\
+%Solátium mi-\textit{se-}\textbf{ró-}rum,\\
+Spes ae-\textit{gro-}\textbf{tánti-}um,\\
+Patróne mo-\textit{ri-}\textbf{énti-}um,\\
+Ter-\textit{ror} \textbf{daémo-}num,\\
+Protéctor sanctae \textit{Ec-}\textbf{clési-}ae,
+%\end{multicols}
+
+\gregorioscore{josephgabc/litany3}
+\begin{nstabbing}
+\>Agnus Dei, \>qui tollis peccata mundi, \>exáudi nos\\
+\>Agnus Dei, \>qui tollis peccata mundi, \>miserére\\
+\end{nstabbing}
+
+\gresetlastline{ragged}
+\gregorioscore{josephgabc/litany4}
+\begin{nstabbing}
+	\>Dómine.\\
+	\>\>nobis.\\
+\end{nstabbing}
+
+\end{document}
